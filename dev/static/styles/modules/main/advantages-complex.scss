@@ -1,0 +1,24 @@
+.advantages-complex {
+	padding: 206px 0 200px;
+	background: $orange-bg;
+	.container {position: relative}
+	&__section-title {
+		position: absolute;
+		top: 0;
+		left: 15px;
+	}
+	&__list {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-rows: auto;
+		gap: 55px
+	}
+}
+
+@media only screen and (max-width : 1709px) {
+	.advantages-complex {
+		&__list {
+			grid-template-columns: 1fr;
+		}
+	}
+}

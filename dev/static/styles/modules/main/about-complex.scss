@@ -1,0 +1,60 @@
+.about-complex {
+	padding: 104px 0 120px;
+	background: $blue-light;
+	overflow: hidden;
+	.container {position: relative}
+	&__section-title {
+		position: absolute;
+		top: 0;
+		left: 15px;
+	}
+	&__discription {
+		p {padding: 46px 0}
+	}
+	&__location {
+		position: relative;
+		p {
+			position: relative;
+			padding: 46px 0;
+			z-index: 2;
+		}
+		&::after {
+			content: '';
+			position: absolute;
+			top: 0;
+			right: -100vw;
+			bottom: 0;
+			left: -83px;
+			background: $white;
+			z-index: 1;
+		}
+	}
+	&__slider {
+		margin: 80px 0 120px;
+	}
+	&__item {
+		height: 420px;
+		img {height: 100%}
+	}
+	.col-xll-4.col-xl-6 {
+		&:nth-child(1n+4) {margin-top: 60px}
+	}
+}
+
+@media only screen and (max-width: 1709px) {
+	.about-complex {
+		.col-xll-4.col-xl-6 {
+			&:nth-child(1n+4) {margin-top: 0}
+			&:nth-child(1n+3) {margin-top: 30px}
+		}
+	}
+}
+
+@media only screen and (max-width: 1199px) {
+	.about-complex {
+		.col-xll-4.col-xl-6 {
+			&:nth-child(1n+3) {margin-top: 0}
+			&:nth-child(1n+2) {margin-top: 30px}
+		}
+	}
+}

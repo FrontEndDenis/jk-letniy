@@ -1,0 +1,64 @@
+include ../utils/mixins
+block variables
+
+//- |<?php
+//- |class UniversalAnalyticsCookieParser{
+//- |    function __construct() {
+//- |        if( isset($_COOKIE["_ga"]) ){
+//- |            return $this->getCid();
+//- |        }
+//- |    }
+//- |    public function parseCookie()
+//- |    {
+//- |        list($version,$domainDepth, $cid1, $cid2) = preg_split('[\.]', $_COOKIE["_ga"],4);
+//- |        return array('version' => $version, 'domainDepth' => $domainDepth, 'cid' => $cid1.'.'.$cid2);
+//- |    }
+//- |    public function getCid()
+//- |    {
+//- |        $contents = $this->parseCookie();
+//- |        return $contents['cid'];
+//- |    }
+//- |}
+//- |
+//- |$UaParser = new UniversalAnalyticsCookieParser();
+//- |?>
+
+doctype html
+html(lang="ru-RU")
+	head
+		meta(charset="utf-8")
+		title #{title}
+		<!--[if IE]>
+		meta(http-equiv='X-UA-Compatible', content="IE = edge")
+		<![endif]-->
+		meta(name="viewport" content="width=device-width,initial-scale=1")
+		meta(name="keywords" content="")
+		meta(name="description" content=description)
+		link(href='https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap', rel='stylesheet')
+		link(rel="stylesheet" type='text/css' href="static/css/styles.min.css")
+		link( href="static/images/general/favicon.svg" rel="shortcut icon" type="image/svg")
+
+		<!--[if lt IE 9]>
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js")
+		<![endif]-->
+
+		//- script(async src="https://www.googletagmanager.com/gtag/js?id=UA-175175627-1")
+		//- script
+		//- 	include ../../seo/metrics.js
+
+		//- script(src="//script.marquiz.ru/v1.js")
+		//- script
+		//- 	include ../../seo/marquiz.js
+		//- noscript
+		//- 	iframe(src='https://www.googletagmanager.com/ns.html?id=GTM-5N65B9Z', height='0', width='0', style='display:none;visibility:hidden')
+		//- noscript
+		//- 	div
+		//- 		img(src='https://mc.yandex.ru/watch/66345070', style='position:absolute; left:-9999px;', alt='')
+	body
+		include ../section/header/header
+		block content
+		block modal
+		script(src="static/js/jquery-3.3.1.min.js")
+		script(src="static/js/libs.min.js")
+		script(src="static/js/main.js")
+		block script

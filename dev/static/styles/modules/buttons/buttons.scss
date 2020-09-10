@@ -1,0 +1,39 @@
+.c-btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 70px;
+	padding: 20px;
+	background: $accent;
+	color: $white;
+	border: none;
+	border-radius: 2px;
+	font-size: 24px;
+	font-weight: 600;
+	line-height: 29px;
+	outline: none;
+	transition: .3s linear;
+	cursor: pointer;
+	&:hover {
+		background: $accent2;
+		box-shadow: inset 0px 4px 10px rgba(0, 0, 0, .25);
+	}
+	&:active {
+		background: $accent3;
+		box-shadow: none
+	}
+	&--wdh290 {
+		max-width: 290px;
+	}
+	&--white, &--gray {
+		background: $white;
+		color: $purple-dark;
+		&:hover {background: $accent3}
+		&:active {background: $orange-light}
+	}
+	&--gray {
+		&:hover {background: $clre5}
+		&:active {background: $clrf4}
+	}
+}

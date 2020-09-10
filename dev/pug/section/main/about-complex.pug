@@ -1,0 +1,43 @@
+include ../cards/about-card
+section.about-complex
+	.container
+		.row
+			.about-complex__section-title
+				.section-title
+					.section-title__text О комплексе
+					.section-title__number 1
+			.col-xll-11.col-xl-10.offset-xll-1.offset-lg-2
+				.row
+					.col-xll-7.col-xl-6
+						.about-complex__discription
+							p ЖК Летний Сочи – это многоквартирный 12-этажный жилой комплекс из 7 корпусов "Лес", "Пляж", "Солнце", "Море", "Цветы", "Небо", "Горы".
+					.col-xll-5.col-xl-6
+						.about-complex__location
+							p ЖК находится в ущелье реки Кудепста на равнинной местности в окружении субтропической растительности Национального парка на собственной территории в 5 Га.
+	.about-complex__slider.owl-carousel
+		.about-complex__item
+			img(src='../../../static/images/content/slide-1.jpg', alt='Слайдер 1')
+		.about-complex__item
+			img(src='../../../static/images/content/slide-2.jpg', alt='Слайдер 2')
+		.about-complex__item
+			img(src='../../../static/images/content/slide-3.jpg', alt='Слайдер 3')
+		.about-complex__item
+			img(src='../../../static/images/content/slide-4.jpg', alt='Слайдер 4')
+		.about-complex__item
+			img(src='../../../static/images/content/slide-1.jpg', alt='Слайдер 1')
+	.container
+		.row
+			.col-xll-11.col-xl-12.offset-xll-1
+				.row
+					.col-xll-4.col-xl-6
+						+aboutCard('about-card-1', 'Панорамный вид на море', 'Наслаждайтесь потрясающими морскими пейзажами, не выходя из дома')
+					.col-xll-4.col-xl-6
+						+aboutCard('about-card-2', 'Развитая инфраструктура', 'В пешей минутной доступности – детские сады и школы. Удобный выезд к ж/д вокзалу и аэропорту')
+					.col-xll-4.col-xl-6
+						+aboutCard('about-card-3', 'Велосипедный паркинг', 'В ЖК “Летний” предусмотрены зоны для хранения велосипедов с системой контроля доступа')
+					.col-xll-4.col-xl-6
+						+aboutCard('about-card-4', 'Паркинг', 'Отдельный вместительный паркинг для жильцов и гостевой паркинг')
+					.col-xll-4.col-xl-6
+						+aboutCard('about-card-5', 'Придомовая территория', 'В распоряжении жильцов детский игровой комплекс, спортплощадка, площадка для выгула собак')
+					.col-xll-4.col-xl-6
+						+aboutCard('about-card-6', 'Качественные входные группы', 'Стеклянные двери, просторные холлы и консьерж')

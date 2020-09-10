@@ -1,0 +1,50 @@
+.s-location {
+	padding: 114px 0 184px;
+	background: $blue-light;
+	overflow: hidden;
+	.container {position: relative}
+	.col-xll-7.col-xl-6, .col-xll-5.col-xl-6 {
+		display: flex;
+		align-items: center;
+	}
+	&__section-title {
+		position: absolute;
+		top: 45px;
+		left: 15px;
+	}
+	&__address {
+		position: relative;
+		padding: 40px 0;
+		&::after {
+			content: '';
+			position: absolute;
+			top: 0;
+			right: -100vh;
+			bottom: 0;
+			left: -130px;
+			background: $white;
+			z-index: 1;
+		}
+		p {
+			position: relative;
+			z-index: 2;
+		}
+	}
+	&__info {
+		display: flex;
+		align-items: center;
+		font-weight: 600;
+		line-height: 33px;
+	}
+	&__number {
+		margin-right: 25px;
+		color: $accent;
+		font-size: 96px;
+	}
+	&__text {
+		margin-bottom: 2px;
+		font-size: 24px;
+	}
+	&__units {font-size: 30px}
+	.col-12 {margin-top: 100px}
+}

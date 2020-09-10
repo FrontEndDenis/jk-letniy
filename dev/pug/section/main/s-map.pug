@@ -1,0 +1,30 @@
+section.s-map
+	.container
+		h2.s-map__title.title Как добраться до нас на общественном транспорте
+		.tabs
+			ul.s-map__nav.nav(role='tablist')
+				li.nav-item
+					a.s-map__nav-item.nav-link.active(data-toggle='tab', href='#airplane', role='tab', aria-selected='true')
+						+icon("airplane")
+						span Из аэропорта
+				li.nav-item
+					a.s-map__nav-item.nav-link(data-toggle='tab', href='#train', role='tab', aria-selected='false')
+						+icon("train")
+						span От Ж/д вокзала
+				li.nav-item
+					a.s-map__nav-item.nav-link(data-toggle='tab', href='#bus', role='tab', aria-selected='false')
+						+icon("bus")
+						span От автовокзала
+	.s-map__map
+		#map-ctrl Используйте Ctrl + scroll, чтобы увеличить карту.
+			#map
+		.s-map__modal
+			b.s-map__modal-title Мы рядом
+			p.s-map__modal-desc Офис расположен в центре Сочи. Хорошая транспортная развязка позволяет быстро добраться к нам из любой точки города.
+			ul
+				li 
+				span.s-map__modal-link ул Московская 3 корпус 3, 2 этаж, офис 5.
+				li
+				a.s-map__modal-link(href="tel:8(800)600-43-35") 8 (800) 600-43-35
+				li 
+				a.s-map__modal-link(href="mailto:info@bvbrealty.ru") info@bvbrealty.ru

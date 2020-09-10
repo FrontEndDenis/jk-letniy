@@ -1,0 +1,59 @@
+.main {
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	background: center/cover url('../../../../static/images/content/bg__header.jpg') no-repeat;
+	color: $white;
+	&::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background: linear-gradient(89.76deg, rgba(2, 26, 32, 0.1) 0.2%, rgba(1, 45, 55, 0.1) 26.66%, rgba(0, 0, 0, 0.0510417) 72.83%, rgba(0, 0, 0, 0) 99.8%);
+		z-index: 1;
+	}
+	&__start-sales {
+		display: flex;
+		justify-content: center;
+		position: absolute;
+		bottom: -50px;
+		right: 15px;
+		width: 500px;
+		padding: 40px 40px 36px;
+		background: rgba(255, 255, 255, .3);
+		border-radius: 5px 0px 0px 5px;
+		text-align: right;
+		z-index: 2;
+	}
+	&__subtitle {
+		margin-bottom: 20px;
+		font-size: 36px;
+		font-weight: 600;
+		line-height: 44px;
+	}
+	&__content {
+		position: absolute;
+		top: 50%;
+		left: 0;
+		right: 0;
+		transform: translateY(-50%);
+		z-index: 2;
+	}
+	&__title {
+		margin-bottom: 46px;
+		font-size: 48px;
+		font-weight: 500;
+		line-height: 59px;
+	}
+	&__wrap {
+		display: flex;
+		align-items: center;
+	}
+	&__scroll-down {
+		display: inline-block;
+		margin-right: 40px;
+	}
+	.container {position: relative}
+}

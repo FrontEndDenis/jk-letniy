@@ -1,0 +1,31 @@
+.s-advantages {
+	position: relative;
+	height: 486px;
+	background: center/cover url('../../../../static/images/content/bg__header.jpg') no-repeat;
+	color: $white;
+	&::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background: rgba(0, 0, 0, .6);
+		z-index: 1;
+	}
+	&__content {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		z-index: 2;
+	}
+	&__title {margin-bottom: 25px}
+	&__wrap {
+		display: flex;
+		align-items: center;
+	}
+	&__scroll-down {
+		margin-right: 40px;
+	}
+}

@@ -1,0 +1,39 @@
+.s-quiz {
+	position: relative;
+	padding: 107px 0;
+	background: $purple-dark;
+	color: $white;
+	overflow: hidden;
+	&::after {
+		content: url('../../../../static/images/general/decor.png');
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		z-index: 1;
+	}
+	&__title, &__text, &__button, &__logo {
+		position: relative;
+		z-index: 2;
+	}
+	&__title {
+		max-width: 864px;
+		margin-bottom: 56px;
+		font-size: 45px;
+		font-weight: 600;
+		line-height: 150%;
+	}
+	&__text {
+		margin-bottom: 64px;
+		font-size: 24px;
+		font-weight: 500;
+		line-height: 36px;
+	}
+	&__logo {
+		display: flex;
+		justify-content: center;
+		img {
+			margin-top: 40px;
+		}
+	}
+}

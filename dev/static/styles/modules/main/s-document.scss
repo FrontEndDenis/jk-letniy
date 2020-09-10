@@ -1,0 +1,33 @@
+.s-document {
+	padding: 144px 0 184px;
+	background: $orange-bg;
+	.container {position: relative}
+	&__section-title {
+		position: absolute;
+		top: 0px;
+		left: 15px;
+	}
+	&__title {margin-bottom: 55px}
+	&__download {
+		display: flex;
+		align-items: center;
+		min-height: 100px;
+		padding: 20px 30px;
+		background: $white;
+		transition: .3s linear;
+		&:hover {background: $accent3}
+		&:active {background: $orange-light}
+	}
+	&__icon {margin-right: 24px}
+	&__content {margin-top: 150px}
+	&__content-title {
+		margin-bottom: 46px;
+		font-size: 36px;
+		font-weight: 500;
+		line-height: 44px;
+	}
+	&__content-text {line-height: 150%}
+	.col-xll-4.col-xl-6 {
+		&:nth-child(1n+5) {margin-top: 46px}
+	}
+}

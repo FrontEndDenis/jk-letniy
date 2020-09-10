@@ -1,0 +1,5 @@
+.clr-1 {
+	color: $accent;
+	&:hover {color: $accent2}
+	&:active {color: $accent3}
+}
