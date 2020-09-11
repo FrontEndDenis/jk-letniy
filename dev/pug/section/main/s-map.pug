@@ -1,30 +1,44 @@
 section.s-map
 	.container
-		h2.s-map__title.title Как добраться до нас на общественном транспорте
 		.tabs
 			ul.s-map__nav.nav(role='tablist')
 				li.nav-item
-					a.s-map__nav-item.nav-link.active(data-toggle='tab', href='#airplane', role='tab', aria-selected='true')
-						+icon("airplane")
-						span Из аэропорта
+					a.s-map__nav-item.nav-link.active(data-toggle='tab', href='#places', role='tab', aria-selected='true')
+						+icon('places')
+						| Места
 				li.nav-item
-					a.s-map__nav-item.nav-link(data-toggle='tab', href='#train', role='tab', aria-selected='false')
-						+icon("train")
-						span От Ж/д вокзала
-				li.nav-item
-					a.s-map__nav-item.nav-link(data-toggle='tab', href='#bus', role='tab', aria-selected='false')
-						+icon("bus")
-						span От автовокзала
+					a.s-map__nav-item.nav-link(data-toggle='tab', href='#driveway', role='tab', aria-selected='false')
+						+icon('driveway')
+						| Проезд
+			.s-mape__content.tab-content
+				#places.tab-pane.show.active(role='tabpanel')
+					.s-map__places-map
+						button(type='button')
+							img(src='../../../../static/images/general/cafe.svg', alt='Кафе и рестораны')
+							| Кафе и рестораны (3)
+						button(type='button')
+							img(src='../../../../static/images/general/hospital.svg', alt='Аптеки и больницы')
+							| Аптеки и больницы (3)
+						button(type='button')
+							img(src='../../../../static/images/general/recreation.svg', alt='Отдых и развлечения')
+							| Отдых и развлечения (4)
+						button(type='button')
+							img(src='../../../../static/images/general/learning.svg', alt='Школы и детские сады')
+							| Школы и детские сады (3)
+				#driveway.tab-pane(role='tabpanel')
+					.s-map__places-map
+						.s-map__item-places.item-places
+							.item-places__img
+								img(src='../../../../static/images/general/airport-s.svg', alt='Аэропорт')
+							.item-places__content
+								.item-places__title Аэропорт
+								.item-places__text ул. Мира, 50, Адлер, Краснодарский край
+						.s-map__item-places.item-places
+							.item-places__img
+								img(src='../../../../static/images/general/train-s.svg', alt='Ж/Д Вокзал')
+							.item-places__content
+								.item-places__title Ж/Д Вокзал
+								.item-places__text ул. Горького, 56, Сочи, Краснодарский край
 	.s-map__map
 		#map-ctrl Используйте Ctrl + scroll, чтобы увеличить карту.
-			#map
-		.s-map__modal
-			b.s-map__modal-title Мы рядом
-			p.s-map__modal-desc Офис расположен в центре Сочи. Хорошая транспортная развязка позволяет быстро добраться к нам из любой точки города.
-			ul
-				li 
-				span.s-map__modal-link ул Московская 3 корпус 3, 2 этаж, офис 5.
-				li
-				a.s-map__modal-link(href="tel:8(800)600-43-35") 8 (800) 600-43-35
-				li 
-				a.s-map__modal-link(href="mailto:info@bvbrealty.ru") info@bvbrealty.ru
+		#map

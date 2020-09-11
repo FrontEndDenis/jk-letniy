@@ -49,10 +49,8 @@ function isDevice() {
 		}
 	}
 	if (isMobile.any()) {
-		console.log('Мобилка');
 		return true;
 	} else {
-		console.log('Пк');
 		return false;
 	}
 }
