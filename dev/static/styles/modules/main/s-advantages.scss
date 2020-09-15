@@ -17,15 +17,36 @@
 		position: absolute;
 		top: 50%;
 		left: 50%;
+		max-width: 890px;
+		width: 100%;
 		transform: translate(-50%, -50%);
 		z-index: 2;
 	}
 	&__title {margin-bottom: 25px}
-	&__wrap {
-		display: flex;
-		align-items: center;
+	.container {
+		position: relative;
+		height: 100%;
 	}
-	&__scroll-down {
-		margin-right: 40px;
+}
+
+@media only screen and (max-width: 1199px) {
+	.s-advantages {
+		height: 438px;
+		&__content {
+			left: 15px;
+			max-width: 690px;
+			transform: translate(0, -50%);
+		}
+	}
+}
+
+@media only screen and (max-width: 575px) {
+	.s-advantages {
+		height: 300px;
+		&__content {
+			right: 15px;
+			max-width: 100%;
+			width: auto;
+		}
 	}
 }

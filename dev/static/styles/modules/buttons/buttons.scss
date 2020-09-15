@@ -2,6 +2,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	flex-shrink: 0;
 	width: 100%;
 	height: 70px;
 	padding: 20px;
@@ -35,5 +36,49 @@
 	&--gray {
 		&:hover {background: $clre5}
 		&:active {background: $clrf4}
+	}
+}
+
+.checkbox {
+	margin: 0;
+	font-size: 18px;
+	font-weight: 500;
+	user-select: none;
+	input {display: none}
+	&__text {
+		position: relative;
+		display: flex;
+		align-items: center;
+		height: auto;
+		line-height: 1.1;
+		cursor: pointer;
+		&::before {
+			content: '';
+			display: inline-block;
+			flex-shrink: 0;
+			width: 25px;
+			height: 25px;
+			margin: auto 18px auto 0;
+			border: 2px solid $gray;
+			border-radius: 2px;
+		}
+		&::after {
+			display: none;
+			content: url('../../../../static/images/general/check.svg');
+			position: absolute;
+			top: 3px;
+			left: 4px;
+		}
+	}
+	input[type=checkbox]:checked ~ span::after {display: block}
+}
+
+@media only screen and (max-width: 575px) {
+	.c-btn {
+		height: 40px;
+		padding: 11px 20px;
+		font-size: 14px;
+		line-height: 17px;
+		&--wdh290 {max-width: 100%}
 	}
 }

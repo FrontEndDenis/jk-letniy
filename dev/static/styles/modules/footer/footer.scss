@@ -1,0 +1,74 @@
+.footer {
+	overflow: hidden;
+	&__wrap {
+		position: relative;
+		&::after {
+			content: '';
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			right: 0;
+			left: -100vw;
+			background: $purple-dark;
+			z-index: 1;
+		}
+	}
+	&__information {
+		position: relative;
+		color: $white;
+		z-index: 2;
+	}
+	&__navigation {
+		margin: 35px 0 140px;
+		li {
+			&:not(:last-child) {margin-bottom: 16px;}
+		}
+		a {
+			font-weight: 500;
+			&:hover {color: $accent}
+			&:active {
+				color: $accent3;
+				text-decoration: underline;
+			}
+		}
+	}
+	&__contacts {
+		font-weight: 600;
+		a {
+			display: block;
+			&:hover {color: $accent}
+			&:active {color: $accent3}
+		}
+	}
+	&__forms {
+		max-width: 540px;
+		.form-group {
+			&:not(:first-child) {margin-top: 58px}
+		}
+	}
+	&__title {
+		margin-bottom: 46px;
+	}
+	&__text {
+		margin-bottom: 56px;
+	}
+	&__checkbox {
+		margin: 50px 0;
+	}
+	&__button {
+		button {
+			height: 80px;
+			padding: 25px 20px;
+		}
+	}
+	.col-xll-5.col-xl-6.offset-xll-1, .col-xl-5.offset-xl-1 {padding: 172px 15px 160px}
+}
+
+@media only screen and (max-width: 1199px) {
+	.footer {
+		background: $purple-dark;
+		&__wrap {
+			&::after {display: none}
+		}
+	}
+}

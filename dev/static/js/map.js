@@ -1,353 +1,5 @@
 "use strict";
 
-// $(document).ready(function () {
-//   ymaps.ready(function () {
-//     var myMap = new ymaps.Map('map', {
-//       center: [43.60099676197864,39.71682577116392],
-//       controls: [],
-//       zoom: 14
-//     }, {
-//     }),
-//         oneCollection = new ymaps.GeoObjectCollection({}, {preset: "pin4#icon"}),
-//         twoCollection = new ymaps.GeoObjectCollection({}, {preset: "pin4#icon"}),
-//         threeCollection = new ymaps.GeoObjectCollection({}, {preset: "pin4#icon"}),
-//         fourCollection = new ymaps.GeoObjectCollection({}, {preset: "pin4#icon"}),
-//         fiveCollection = new ymaps.GeoObjectCollection({}, {preset: "pin4#icon"}),
-
-//     myPlacemarkMain = new ymaps.Placemark([43.60099676197864,39.71682577116392], {
-//       hintContent: 'Сочи, Виноградная улица, 14',
-//     },{
-//       iconLayout: 'default#imageWithContent',
-//       iconImageHref: 'static/images/general/pin/main-pin.svg',
-//       iconImageSize: [182, 52],
-//       iconImageOffset: [-175, -45],
-//     }, "balloonPanelMaxMapArea", 0),
-//     myPlacemarkMain_1 = new ymaps.Placemark([43.58496957457362,39.74633699999999], {
-//       hintContent: 'ЖК Лофт Парк в Сочи ​Сочи, ул. Пятигорская, 88/11Б',
-//     }, {
-//       iconLayout: 'default#imageWithContent',
-//       iconImageHref: 'static/images/general/pin/pin_1.svg',
-//       iconImageSize: [140, 52],
-//       iconImageOffset: [-70, -52],
-//     }),
-//     myPlacemarkMain_2 = new ymaps.Placemark([43.63477257455227,39.71097949999994], {
-//       hintContent: 'ЖК Грин Лофт Парк Сочи, ул. Целинная 13 г',
-//     }, {
-//       iconLayout: 'default#imageWithContent',
-//       iconImageHref: 'static/images/general/pin/pin_2.svg',
-//       iconImageSize: [140, 52],
-//       iconImageOffset: [-70, -52],
-//     }),
-//     myPlacemarkMain_3 = new ymaps.Placemark([43.62241357457033,39.71637849999999], {
-//       hintContent: 'ЖК ГОЛД ЛОФТ ПАРК СОЧИ Сочи, ул. Санаторная 9',
-//     }, {
-//       iconLayout: 'default#imageWithContent',
-//       iconImageHref: 'static/images/general/pin/pin_3.svg',
-//       iconImageSize: [140, 52],
-//       iconImageOffset: [-70, -52],
-//     }),
-//     myPlacemarkMain_4 = new ymaps.Placemark([43.47190707455639,39.89714649999996], {
-//       hintContent: 'Океанариум',
-//     }, {
-//       iconLayout: 'default#imageWithContent',
-//       iconImageHref: 'static/images/general/pin/pin_4.png',
-//       iconImageSize: [60, 60],
-//       iconImageOffset: [-30, -30],
-//     }),
-//     myPlacemarkMain_5 = new ymaps.Placemark([43.46833426040381,39.89597096693417], {
-//       hintContent: 'Аквапарк',
-//     }, {
-//       iconLayout: 'default#imageWithContent',
-//       iconImageHref: 'static/images/general/pin/pin_5.png',
-//       iconImageSize: [60, 60],
-//       iconImageOffset: [-30, -30],
-//     }),
-//     myPlacemark = new ymaps.Placemark([43.597329574555644,39.71563249999999], {
-//       balloonContentBody: `
-//         <div class="map-content map-content--pomegranate">
-//           <div class="map-title">
-//             Мимино 
-//           </div>
-//           <div class="map-foot">
-//             <span class="map-metr">Виноградная, 4</span>
-//           </div>
-//         </div>`
-//     }),
-//     myPlacemark1 = new ymaps.Placemark([43.58697407455384,39.7481965], {
-//       balloonContentBody: `
-//         <div class="map-content map-content--pomegranate">
-//           <div class="map-title">
-//             Имерити
-//           </div>
-//           <div class="map-foot">
-//             <span class="map-metr">​Виноградная, 10/2</span>
-//           </div>
-//         </div>`
-//     }),
-//     myPlacemark2 = new ymaps.Placemark([43.59841957455843,39.71625249999995], {
-//       balloonContentBody: `
-//         <div class="map-content map-content--pomegranate">
-//           <div class="map-title">
-//             Rice Paradise
-//           </div>
-//           <div class="map-foot">
-//             <span class="map-metr">Молодогвардейская улица, 2к34
-//             </span>
-//           </div>
-//         </div>`
-//     }),
-//     myPlacemark3 = new ymaps.Placemark([43.60395557457268,39.71918099999996], {
-//       balloonContentBody: `
-//         <div class="map-content map-content--pomegranate">
-//           <div class="map-title">
-//             La Petite
-//           </div>
-//           <div class="map-foot">
-//             <span class="map-metr">​Виноградная, 20а
-//             </span>
-//           </div>
-//         </div>`
-//     }),
-
-//     myPlacemark4 = new ymaps.Placemark([43.601635114535505,39.72326849999996], {
-//       balloonContentBody: `
-//         <div class="map-content map-content--pomegranate">
-//           <div class="map-title">
-//             ТЦ Black Galaxy
-//           </div>
-//           <div class="map-foot">
-//             <span class="map-metr">​Гагарина, 16/1
-//             </span>
-//           </div>
-//         </div>`
-//     }),
-//     myPlacemark5 = new ymaps.Placemark([43.60481107454993,39.72805649999996], {
-//       balloonContentBody: `
-//         <div class="map-content map-content--pomegranate">
-//           <div class="map-title">
-//             ТЦ Коммунстрой
-//           </div>
-//           <div class="map-foot">
-//             <span class="map-metr">Чайковского, 45/1
-//             </span>
-//           </div>
-//         </div>`
-//     }),
-//     myPlacemark6 = new ymaps.Placemark([43.611753848302435,39.704245195770255], {
-//       balloonContentBody: `
-//         <div class="map-content map-content--pomegranate">
-//           <div class="map-title">
-//             Пляж Альбатрос
-//           </div>
-//           <div class="map-foot">
-//             <span class="map-metr">Политехническая, 78
-//             </span>
-//           </div>
-//         </div>`
-//     }),
-//     myPlacemark7 = new ymaps.Placemark([43.58527290575093,39.72435049999996], {
-//       balloonContentBody: `
-//         <div class="map-content map-content--pomegranate">
-//           <div class="map-title">
-//             Пляж Ривьера 
-//           </div>
-//           <div class="map-foot">
-//             <span class="map-metr">​Ривьерский переулок, 4/5
-//             </span>
-//           </div>
-//         </div>`
-//     }),
-
-//     myPlacemark8 = new ymaps.Placemark([43.59674857455408,39.723295499999985], {
-//       balloonContentBody: `
-//         <div class="map-content map-content--pomegranate">
-//           <div class="map-title">
-//             СОШ №7  
-//           </div>
-//           <div class="map-foot">
-//             <span class="map-metr">Чайковского, 7
-//             </span>
-//           </div>
-//         </div>`
-//     }),
-//     myPlacemark9 = new ymaps.Placemark([43.60316607454567,39.726232499999945], {
-//       balloonContentBody: `
-//         <div class="map-content map-content--pomegranate">
-//           <div class="map-title">
-//             СОШ №24  
-//           </div>
-//           <div class="map-foot">
-//             <span class="map-metr">Цветной бульвар, 40
-//             </span>
-//           </div>
-//         </div>`
-//     }),
-//     myPlacemark10 = new ymaps.Placemark([43.60930807456156,39.712937499999995], {
-//       balloonContentBody: `
-//         <div class="map-content map-content--pomegranate">
-//           <div class="map-title">
-//             Радуга частная школа  
-//           </div>
-//           <div class="map-foot">
-//             <span class="map-metr">​Рахманинова переулок, 41
-//             </span>
-//           </div>
-//         </div>`
-//     }),
-
-//     myPlacemark11 = new ymaps.Placemark([43.58527290575093,39.72435049999996], {
-//       balloonContentBody: `
-//         <div class="map-content map-content--pomegranate">
-//           <div class="map-title">
-//             Сад Бабочек 
-//           </div>
-//           <div class="map-foot">
-//             <span class="map-metr">Егорова, 1/20
-//             </span>
-//           </div>
-//         </div>`
-//     }),
-//     myPlacemark12 = new ymaps.Placemark([43.58588050633546,39.717164499999996], {
-//       balloonContentBody: `
-//         <div class="map-content map-content--pomegranate">
-//           <div class="map-title">
-//             Комсомольский сквер
-//           </div>
-//         </div>`
-//     }),
-//     myPlacemark13 = new ymaps.Placemark([43.59960157326877,39.72576599999997], {
-//       balloonContentBody: `
-//         <div class="map-content map-content--pomegranate">
-//           <div class="map-title">
-//             Цветной бульвар
-//           </div>
-//         </div>`
-//     }),
-//     myPlacemark14 = new ymaps.Placemark([43.59126108800372,39.715489], {
-//       balloonContentBody: `
-//         <div class="map-content map-content--pomegranate">
-//           <div class="map-title">
-//             Парк Ривьера
-//           </div>
-//           <div class="map-foot">
-//             <span class="map-metr">​Егорова, 1/37
-//             </span>
-//           </div>
-//         </div>`
-//     }),
-
-//     myPlacemark15 = new ymaps.Placemark([43.60317907454572,39.715326999999945], {
-//       balloonContentBody: `
-//         <div class="map-content map-content--pomegranate">
-//           <div class="map-title">
-//             Городская больница №2
-//           </div>
-//           <div class="map-foot">
-//             <span class="map-metr">Туапсинская, 1​
-//             </span>
-//           </div>
-//         </div>`
-//     }),
-//     myPlacemark16 = new ymaps.Placemark([43.601879574567306,39.722729500000014], {
-//       balloonContentBody: `
-//         <div class="map-content map-content--pomegranate">
-//           <div class="map-title">
-//             Мед центр Армед
-//           </div>
-//           <div class="map-foot">
-//             <span class="map-metr">​Гагарина, 19а
-//             </span>
-//           </div>
-//         </div>`
-//     }),
-//     myPlacemark17 = new ymaps.Placemark([43.6235885745734,39.714392999999966], {
-//       balloonContentBody: `
-//         <div class="map-content map-content--pomegranate">
-//           <div class="map-title">
-//             Навигатор здоровья & Клевер
-//           </div>
-//           <div class="map-foot">
-//             <span class="map-metr">Санаторная улица, 14
-//             </span>
-//           </div>
-//         </div>`
-//     }),
-//     myPlacemark18 = new ymaps.Placemark([43.604269074548505,39.71913599999996], {
-//       balloonContentBody: `
-//         <div class="map-content map-content--pomegranate">
-//           <div class="map-title">
-//             Мед центр Проклиник
-//           </div>
-//           <div class="map-foot">
-//             <span class="map-metr">​Виноградная, 20
-//             </span>
-//           </div>
-//         </div>`
-//     });
-
-//     myMap.events.add('click', function() {
-//       if (myMap.balloon.isOpen()) {
-//         myMap.balloon.close();
-//       }
-//     });
-
-//     for (let i = 1; i <= 10; i++) {
-//       ymaps.option.presetStorage.add(`pin${i}#icon`, {
-//         iconLayout: 'default#imageWithContent',
-//         iconImageHref: `static/images/general/pin/${i}.svg`,
-//         iconImageSize: [14, 14],
-//         iconImageOffset: [-7, -7],
-//         hideIconOnBalloonOpen: false,
-//         balloonOffset: [-29, 11],
-//         balloonPanelMaxMapArea: 0,
-//       });
-//     }
-
-//     myMap.behaviors.disable('scrollZoom');
-//     myMap.geoObjects.add(myPlacemarkMain);
-
-//     oneCollection.add(myPlacemark).add(myPlacemark1).add(myPlacemark2).add(myPlacemark3);
-//     twoCollection.add(myPlacemark4).add(myPlacemark5).add(myPlacemark6).add(myPlacemark7);
-//     threeCollection.add(myPlacemark8).add(myPlacemark9).add(myPlacemark10);
-//     fourCollection.add(myPlacemark11).add(myPlacemark12).add(myPlacemark13).add(myPlacemark14);
-//     fiveCollection.add(myPlacemark15).add(myPlacemark16).add(myPlacemark17).add(myPlacemark18);
-
-//     $('.infrastructure-item').on('click', function() {
-//       $('.infrastructure-item').removeClass('infrastructure-item_active');
-//       $(this).addClass('infrastructure-item_active');
-//       addPie(this.dataset.value);
-//     });
-
-//     $('.infrastructure-item').first().click();
-
-//     function addPie(str) {
-//       let obj = {one: 1, two: 1, three: 1, four: 1, five: 1};
-
-//       if (str === 'all') {
-//         obj = Object.keys(obj);
-//         for (let i = 0; i < obj.length; i++) {
-//           myMap.geoObjects.add(eval(`${obj[i]}Collection`));
-//         }
-
-//         return;
-//       }
-
-//       if (obj[str]) {
-//         delete obj[str];
-//         obj = Object.keys(obj);
-
-//         for (let i = 0; i < obj.length; i++) {
-//           myMap.geoObjects.remove(eval(`${obj[i]}Collection`));
-//         }
-//         myMap.geoObjects.add(eval(`${str}Collection`));
-//       }
-//     }
-//   });
-// });
-
-
-
-
 ymaps.ready(function () {
 	let isMobile = {
 		Android: function () { return navigator.userAgent.match(/Android/i); },
@@ -361,11 +13,155 @@ ymaps.ready(function () {
 	};
 
 	let myMap = new ymaps.Map("map", {
-		center: [43.494236, 39.899326],
+		center: [43.490516, 39.897000],
 		controls: ['zoomControl'],
-		zoom: 15
+		zoom: 14
 	}),
-
+		// Инициализация коллекций
+		oneCollection = new ymaps.GeoObjectCollection({}, {
+			iconLayout: 'default#imageWithContent',
+			iconImageHref: `static/images/general/mark-c.svg`,
+			iconImageSize: [35, 48],
+			iconImageOffset: [-17, -48],
+			hideIconOnBalloonOpen: false,
+			balloonOffset: [0, -35],
+			balloonPanelMaxMapArea: 0,
+		}),
+		twoCollection = new ymaps.GeoObjectCollection({}, {
+			iconLayout: 'default#imageWithContent',
+			iconImageHref: `static/images/general/mark-h.svg`,
+			iconImageSize: [35, 48],
+			iconImageOffset: [-17, -48],
+			hideIconOnBalloonOpen: false,
+			balloonOffset: [0, -35],
+			balloonPanelMaxMapArea: 0,
+		}),
+		threeCollection = new ymaps.GeoObjectCollection({}, {
+			iconLayout: 'default#imageWithContent',
+			iconImageHref: `static/images/general/mark-r.svg`,
+			iconImageSize: [35, 48],
+			iconImageOffset: [-17, -48],
+			hideIconOnBalloonOpen: false,
+			balloonOffset: [0, -35],
+			balloonPanelMaxMapArea: 0,
+		}),
+		fourCollection = new ymaps.GeoObjectCollection({}, {
+			iconLayout: 'default#imageWithContent',
+			iconImageHref: `static/images/general/mark-l.svg`,
+			iconImageSize: [35, 48],
+			iconImageOffset: [-17, -48],
+			hideIconOnBalloonOpen: false,
+			balloonOffset: [0, -35],
+			balloonPanelMaxMapArea: 0,
+		}),
+		myPlacemarkMain = new ymaps.Placemark([43.49508257454138, 39.908042499999944], {
+			hintContent: 'г. Сочи, Хостинский район, Кудепста, ул. Искры, 85',
+		  }, {
+			iconLayout: 'default#imageWithContent',
+			iconImageHref: 'static/images/general/mark.svg',
+			iconImageSize: [208, 59],
+			iconImageOffset: [-30, -59],
+		  }, "balloonPanelMaxMapArea", 0),
+		// Инициализация меток с балунами
+		myPlacemark = new ymaps.Placemark([43.494690074565305 ,39.88861249999993], {
+			balloonContentBody: `
+				<div class="map-baloon">
+					<div class="map-baloon__title">Chill Out</div>
+					<div class="map-baloon__address">Сухумское шоссе, 51/3</div>
+				</div>`
+		}),
+		myPlacemark2 = new ymaps.Placemark([43.48350557456138, 39.88968999999996], {
+			balloonContentBody: `
+				<div class="map-baloon">
+					<div class="map-baloon__title">Престиж</div>
+					<div class="map-baloon__address"><span">Просвещения, 163</div>
+				</div>`
+		}),
+		myPlacemark3 = new ymaps.Placemark([43.472777574533715, 39.89606849999993], {
+			balloonContentBody: `
+				<div class="map-baloon">
+					<div class="map-baloon__title">Грейс Арли</div>
+					<div class="map-baloon__address">Ленина, 219д</div>
+				</div>`
+		}),
+		myPlacemark4 = new ymaps.Placemark([43.494369574539526 ,39.89882599999998], {
+			balloonContentBody: `
+				<div class="map-baloon">
+					<div class="map-baloon__title">5+</div>
+					<div class="map-baloon__address">ул.Искры, 50</div>
+				</div>`
+		}),
+		myPlacemark5 = new ymaps.Placemark([43.494761574540576, 39.89529549999992], {
+			balloonContentBody: `
+				<div class="map-baloon">
+					<div class="map-baloon__title">Центр Эстетической медицины</div>
+					<div class="map-baloon__address">Искры, 32</div>
+				</div>`
+		}),
+		myPlacemark6 = new ymaps.Placemark([43.52209207453622, 39.873017499999946], {
+			balloonContentBody: `
+				<div class="map-baloon">
+					<div class="map-baloon__title">Городская больница №3</div>
+					<div class="map-baloon__address">Самшитовая, 4</div>
+				</div>`
+		}),
+		myPlacemark7 = new ymaps.Placemark([43.48012357455259, 39.89282549999995], {
+			balloonContentBody: `
+				<div class="map-baloon">
+					<div class="map-baloon__title">Мед центр Знание</div>
+					<div class="map-baloon__address">Просвещения, 139</div>
+				</div>`
+		}),
+		myPlacemark8 = new ymaps.Placemark([43.47758557454608, 39.8934095], {
+			balloonContentBody: `
+				<div class="map-baloon">
+					<div class="map-baloon__title">Игровая комната Детский мир</div>
+					<div class="map-baloon__address">Просвещения, 156в</div>
+				</div>`
+		}),
+		myPlacemark9 = new ymaps.Placemark([43.49108607455597, 39.887201999999995], {
+			balloonContentBody: `
+				<div class="map-baloon">
+					<div class="map-baloon__title">Пляж Бургас</div>
+					<div class="map-baloon__address">Эпроновская, 1 к5</div>
+				</div>`
+		}),
+		myPlacemark10 = new ymaps.Placemark([43.50069307453092, 39.88024899999998], {
+			balloonContentBody: `
+				<div class="map-baloon">
+					<div class="map-baloon__title">Пляж Кудепста</div>
+					<div class="map-baloon__address">Сухумское шоссе, 21/23</div>
+				</div>`
+		}),
+		myPlacemark11 = new ymaps.Placemark([43.50523971667588, 39.91771991012567], {
+			balloonContentBody: `
+				<div class="map-baloon">
+					<div class="map-baloon__title">Дом Лесника</div>
+					<div class="map-baloon__address">Заречная улица, 45</div>
+				</div>`
+		}),
+		myPlacemark12 = new ymaps.Placemark([43.495716574542975, 39.895088999999906], {
+			balloonContentBody: `
+				<div class="map-baloon">
+					<div class="map-baloon__title">СОШ №18</div>
+					<div class="map-baloon__address">Апшеронская, 1</div>
+				</div>`
+		}),
+		myPlacemark13 = new ymaps.Placemark([43.49221807455886, 39.89712850000002], {
+			balloonContentBody: `
+				<div class="map-baloon">
+					<div class="map-baloon__title">Дет сад №140</div>
+					<div class="map-baloon__address">Искры, 50/6</div>
+				</div>`
+		}),
+		myPlacemark14 = new ymaps.Placemark([43.49599757454375, 39.8935259999999], {
+			balloonContentBody: `
+				<div class="map-baloon">
+					<div class="map-baloon__title">Дет сад №9</div>
+					<div class="map-baloon__address">Ростовская, 10</div>
+				</div>`
+		}),
+		// Инициализация проложения путей
 		multiRoute1 = new ymaps.multiRouter.MultiRoute({
 			referencePoints: [
 				[43.49508257454138, 39.908042499999944],
@@ -423,12 +219,13 @@ ymaps.ready(function () {
 	}
 
 
+	
 	if (document.body.clientWidth >= 1200) {
-		myMap.setZoom(11);
-		myMap.setCenter([43.42700, 40.003486]);
+		myMap.setZoom(14);
+		myMap.setCenter([43.490516, 39.897000]);
 	} else {
-		myMap.setZoom(11);
-		myMap.setCenter([43.36336579006969, 39.804613233398406]);
+		myMap.setZoom(12);
+		myMap.setCenter([43.490516, 39.920000]);
 	}
 
 	let items = document.querySelectorAll('.s-map__nav-item');
@@ -439,30 +236,30 @@ ymaps.ready(function () {
 
 			switch (id) {
 				case 'places':
-					// if (document.body.clientWidth >= 1200) {
-					// 	myMap.setZoom(11);
-					// 	myMap.setCenter([43.533957375851536, 39.68925678808594]);
-					// } else {
-					// 	myMap.setZoom(10);
-					// 	myMap.setCenter([43.36336579006969, 39.804613233398406]);
-					// }
-					// myMap.geoObjects.add(multiRoute1)
-					// myMap.geoObjects.remove(multiRoute2);
+					myMap.setCenter([43.490516, 39.897000]);
+					myMap.setZoom(14);
+					myMap.geoObjects.remove(multiRoute1);
+					myMap.geoObjects.remove(multiRoute2);
+					oneCollection.add(myPlacemark).add(myPlacemark2).add(myPlacemark3);
+					twoCollection.add(myPlacemark4).add(myPlacemark5).add(myPlacemark6).add(myPlacemark7);
+					threeCollection.add(myPlacemark8).add(myPlacemark9).add(myPlacemark10).add(myPlacemark11);
+					fourCollection.add(myPlacemark12).add(myPlacemark13).add(myPlacemark14);
 					break;
 				case 'driveway':
 					myMap.setZoom(11);
-					if (document.body.clientWidth >= 1200) {
-						myMap.setCenter([43.52000, 39.80900]);
-					} else {
-						myMap.setCenter([43.52000, 39.75000]);
-					}
+					myMap.setCenter([43.52000, 39.75000]);
 					myMap.geoObjects.add(multiRoute1);
 					myMap.geoObjects.add(multiRoute2);
+					oneCollection.remove(myPlacemark).remove(myPlacemark2).remove(myPlacemark3);
+					twoCollection.remove(myPlacemark4).remove(myPlacemark5).remove(myPlacemark6).remove(myPlacemark7);
+					threeCollection.remove(myPlacemark8).remove(myPlacemark9).remove(myPlacemark10).remove(myPlacemark11);
+					fourCollection.remove(myPlacemark12).remove(myPlacemark13).remove(myPlacemark14);
 					break;
 			}
 		});
 	}
 
+	// ctrl + скролл
 	if (isMobile.any()) {
 		myMap.behaviors.disable('drag');
 	}
@@ -503,11 +300,55 @@ ymaps.ready(function () {
 		ctrl = false;
 	});
 
-	myMap.controls.events.add('fullscreenenter', function (evt) {
-		myMap.behaviors.enable('scrollZoom');
+	// myMap.controls.events.add('fullscreenenter', function (evt) {
+	// 	myMap.behaviors.enable('scrollZoom');
+	// });
+
+	// myMap.controls.events.add('fullscreenexit', function (evt) {
+	// 	myMap.behaviors.disable('scrollZoom');
+	// });
+
+	// Открытие балуна
+	myMap.events.add('click', function() {
+		if (myMap.balloon.isOpen()) {
+			myMap.balloon.close();
+		}
 	});
 
-	myMap.controls.events.add('fullscreenexit', function (evt) {
-		myMap.behaviors.disable('scrollZoom');
+	// Коллекция меток
+	myMap.geoObjects.add(myPlacemarkMain);
+	oneCollection.add(myPlacemark).add(myPlacemark2).add(myPlacemark3);
+	twoCollection.add(myPlacemark4).add(myPlacemark5).add(myPlacemark6).add(myPlacemark7);
+	threeCollection.add(myPlacemark8).add(myPlacemark9).add(myPlacemark10).add(myPlacemark11);
+	fourCollection.add(myPlacemark12).add(myPlacemark13).add(myPlacemark14);
+
+	$('.s-map__places-map button').on('click', function() {
+		$('.s-map__places-map button').removeClass('active');
+		$(this).addClass('active');
+		addPie(this.dataset.value);
 	});
+
+	$('.s-map__places-map button').first().click();
+
+	function addPie(str) {
+		let obj = {one: 1, two: 1, three: 1, four: 1};
+
+		if (str === 'all') {
+		obj = Object.keys(obj);
+			for (let i = 0; i < obj.length; i++) {
+				myMap.geoObjects.add(eval(`${obj[i]}Collection`));
+			}
+			return;
+		}
+
+		if (obj[str]) {
+			delete obj[str];
+			obj = Object.keys(obj);
+
+			for (let i = 0; i < obj.length; i++) {
+				myMap.geoObjects.remove(eval(`${obj[i]}Collection`));
+			}
+			myMap.geoObjects.add(eval(`${str}Collection`));
+		}
+	}
 });

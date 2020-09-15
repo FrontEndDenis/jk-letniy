@@ -3,3 +3,43 @@
 	&:hover {color: $accent2}
 	&:active {color: $accent3}
 }
+
+.s-title {
+	font-size: 45px;
+	font-weight: 600;
+	line-height: 150%;
+}
+
+.s-title-36 {
+	font-size: 36px;
+	font-weight: 500;
+	line-height: 140%;
+}
+
+.s-text {
+	font-size: 20px;
+	line-height: 150%;
+}
+
+.s-subtitle {
+	font-size: 24px;
+	font-weight: 600;
+	line-height: 150%;
+}
+
+@media only screen and (max-width: 1199px) {
+	.s-title {font-size: 36px}
+	.s-title-36 {font-size: 30px}
+	.s-text {font-size: 18px}
+	.s-subtitle {font-size: 22px}
+}
+
+@media only screen and (max-width: 575px) {
+	.s-title {font-size: 20px}
+	.s-title-36 {font-size: 20px}
+	.s-text {font-size: 16px}
+	.s-subtitle {
+		font-size: 18px;
+		font-weight: 500;
+	}
+}

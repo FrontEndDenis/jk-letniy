@@ -1,0 +1,39 @@
+footer.footer
+	.container
+		.row
+			.col-xll-5.col-xl-6.offset-xll-1.footer__wrap
+				.footer__information
+					.footer__logo
+						img(src='../../../static/images/general/logo-w.svg', alt='ЖК Летний')
+					nav.footer__navigation
+						ul.footer__list.s-subtitle
+							li
+								a(href='#') О комплексе
+							li
+								a(href='#') Квартиры
+							li
+								a(href='#') Местоположение
+							li
+								a(href='#') О застройщике
+					.footer__contacts.s-title-36
+						a(href='tel:+78003503120') 8 (800) 350-31-20
+						a(href="mailto:info@jk-letniy.ru") info@jk-letniy.ru
+			.col-xl-5.offset-xl-1
+				.footer__forms
+					.footer__title.s-title Нужна консультация?
+					.footer__text.s-text Оставьте свои контактные данные, и мы перезвоним, чтобы ответить на любые вопросы
+					form(action='', method='get')
+						.form-group
+							label
+								input(type='input', maxlength='30', placeholder='Имя')
+								span Ваше имя
+						.form-group
+							label
+								input.form-control(type='tel', pattern="\+7\s\(\d{3}\)\s\d{3}-\d{2}-\d{2}", minlength='18', required, placeholder='+7 (___) ___-__-__')
+								span Ваш телефон
+						.footer__checkbox
+							label.checkbox
+								input(type='checkbox', value='', required, checked)
+								span.checkbox__text Согласен с политикой конфиденциальности
+						.footer__button
+							button.c-btn(type='submit') Получить консультацию

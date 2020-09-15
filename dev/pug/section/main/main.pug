@@ -1,13 +1,4 @@
 section.main
-	//- .container
-		.main__start-sales
-			.main__wrap-sales
-				.main__subtitle Старт продаж
-				.main__text
-					| Сдача первого дома
-					br
-					| в 3 квартале 2022
-				a.main__link(href='#') Оставить заявку
 	.main__content
 		.container
 			h1.main__title
@@ -16,13 +7,25 @@ section.main
 				| с видом на море и горы
 				br
 				| от 102 000₽ за м2
-			.main__wrap
-				.main__scroll-down
-					a.scroll-down(href='#')
+			.main__scroll-down
+				a.scroll-down(href='#')
+					.scroll-down__icon
 						+icon('scroll-down')
-				.main__text
-					| Купить жилье 
-					br 
-					| в тихом районе
+					.scroll-down__text
+						| Купить жилье 
+						br 
+						| в тихом районе
+						br
+						| города
+	.container
+		.main__start-sales
+			.main__wrap-sales
+				.main__subtitle Старт продаж
+				.main__sales-text.s-subtitle
+					| Сдача первого дома
 					br
-					| города
+					| в 3 квартале 2022
+				a.main__link.s-subtitle(href='#') Оставить заявку
+			.main__m-sales
+				.main__m-title cдача дома
+				.main__m-text 3 квартрал 2022

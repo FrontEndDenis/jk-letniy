@@ -37,10 +37,26 @@
 		li {
 			&:not(:last-child) {margin-right: 62px}
 		}
+		a {
+			&:hover {color: $accent}
+			&:active {
+				color: $accent3;
+				text-decoration: underline;
+			}
+		}
 	}
 	&__phone {
 		margin-right: 34px;
 		font-weight: 600;
+		&:hover {
+			a {color: $accent}
+			svg {fill: $accent}
+		}
+		&:active {
+			a {color: $accent3}
+			svg {fill: $accent3}
+		}
+		
 	}
 	&__callback {
 		max-width: 200px;
@@ -50,6 +66,10 @@
 			font-size: 16px;
 		}
 	}
+	&__hamburger {
+		display: none;
+		overflow: hidden;
+	}
 	&.scroll-dwn {
 		transform: translateY(-100%);
 	}
@@ -57,17 +77,10 @@
 		padding: 12px 0;
 		background: $white;
 		color: $text-dark;
-		font-size: 20px;
 		.header__logo {
 			img {
 				&:first-child {display: none}
 				&:last-child {display: block}
-			}
-		}
-		.header__navigation {
-			margin-right: 55px;
-			li {
-				&:not(:last-child) {margin-right: 55px}
 			}
 		}
 		.header__phone {
@@ -76,5 +89,42 @@
 		.header__callback {
 			button {color: $text-dark}
 		}
+	}
+}
+
+@media only screen and (max-width: 1709px) {
+	.header {
+		font-size: 15px;
+		&__logo {max-width: 155px}
+		&__navigation {
+			margin-right: 20px;
+			li {
+				&:not(:last-child) {margin-right: 20px}
+			}
+		}
+		&__phone {margin-right: 15px}
+	}
+}
+
+@media only screen and (max-width: 1199px) {
+	.header {
+		font-size: 18px;
+		&__logo {max-width: 210px}
+		&__phone {margin-right: 44px}
+		&__navigation, &__callback {display: none}
+		&__hamburger {display: block}
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	.header {
+		&__logo {max-width: 160px}
+		&__phone {margin-right: 20px}
+	}
+}
+
+@media only screen and (max-width: 575px) {
+	.header {
+		&__phone {display: none}
 	}
 }

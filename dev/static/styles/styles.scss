@@ -90,6 +90,7 @@ button {
 
 a {
 	color: inherit;
+	transition: .3s linear;
 	&:hover, &:active {
 		text-decoration: none;
 		color: inherit;

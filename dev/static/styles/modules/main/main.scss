@@ -14,25 +14,6 @@
 		background: linear-gradient(89.76deg, rgba(2, 26, 32, 0.1) 0.2%, rgba(1, 45, 55, 0.1) 26.66%, rgba(0, 0, 0, 0.0510417) 72.83%, rgba(0, 0, 0, 0) 99.8%);
 		z-index: 1;
 	}
-	&__start-sales {
-		display: flex;
-		justify-content: center;
-		position: absolute;
-		bottom: -50px;
-		right: 15px;
-		width: 500px;
-		padding: 40px 40px 36px;
-		background: rgba(255, 255, 255, .3);
-		border-radius: 5px 0px 0px 5px;
-		text-align: right;
-		z-index: 2;
-	}
-	&__subtitle {
-		margin-bottom: 20px;
-		font-size: 36px;
-		font-weight: 600;
-		line-height: 44px;
-	}
 	&__content {
 		position: absolute;
 		top: 50%;
@@ -40,6 +21,7 @@
 		right: 0;
 		transform: translateY(-50%);
 		z-index: 2;
+		.container {position: relative}
 	}
 	&__title {
 		margin-bottom: 46px;
@@ -47,13 +29,90 @@
 		font-weight: 500;
 		line-height: 59px;
 	}
-	&__wrap {
+	&__start-sales {
 		display: flex;
-		align-items: center;
+		position: absolute;
+		bottom: 50px;
+		right: 15px;
+		width: 540px;
+		padding: 54px 30px 44px 64px;
+		background: $blue-light;
+		color: $text-dark;
+		border-radius: 5px 0px 0px 5px;
+		z-index: 2;
 	}
-	&__scroll-down {
-		display: inline-block;
-		margin-right: 40px;
+	&__sales-text {
+		margin: 12px 0 28px;
+		line-height: 30px;
 	}
-	.container {position: relative}
+	&__link {
+		color: $accent;
+		line-height: 30px;
+		&:hover {color: $accent2}
+		&:active {color: $accent3}
+	}
+	&__m-sales {
+		display: none;
+		text-align: right;
+	}
+	&__m-title {
+		margin-bottom: 4px;
+		font-size: 14px;
+		line-height: 15px;
+	}
+	&__m-text {
+		font-size: 16px;
+		font-weight: 600;
+		line-height: 17px;
+	}
+	.container {
+		position: relative;
+		height: 100%;
+	}
+}
+
+@media only screen and (max-width: 1199px) {
+	.main {
+		&::after {
+			background: linear-gradient(89.76deg, rgba(2, 26, 32, 0.5) 0.2%, rgba(1, 45, 55, 0.5) 26.66%, rgba(0, 0, 0, 0.255208) 72.83%, rgba(0, 0, 0, 0) 99.8%);;
+		}
+		&__title {
+			font-size: 38px;
+			line-height: 46px;
+		}
+		&__start-sales {
+			width: 450px;
+			padding: 35px 30px 32px 50px;
+		}
+		&__sales-text {margin: 8px 0 20px}
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	.main {
+		&::after {
+			background: rgba(2, 26, 32, 0.4);
+		}
+	}
+}
+
+@media only screen and (max-width: 575px) {
+	.main {
+		&__title {
+			margin-bottom: 36px;
+			font-size: 24px;
+			line-height: 30px;
+		}
+		&__scroll-down {margin-right: 20px}
+		&__start-sales {
+			right: 0;
+			justify-content: flex-end;
+			max-width: 180px;
+			padding: 12px 15px;
+			background: $accent;
+			color: $white;
+		}
+		&__wrap-sales {display: none}
+		&__m-sales {display: block}
+	}
 }

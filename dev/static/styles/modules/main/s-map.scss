@@ -53,11 +53,22 @@
 		button {
 			display: flex;
 			align-items: center;
+			transition: .3s linear;
 			img {
 				flex-shrink: 0;
 				margin-right: 18px;
 			}
+			span {transition: .3s linear}
 			&:not(:first-child) {margin-top: 10px}
+			&:hover {
+				span {transform: translateY(-2px)}
+			}
+			&:active {
+				span {color: $gray-dark}
+			}
+			&.active {
+				span {color: $accent}
+			}
 		}
 	}
 	&__map {
@@ -121,4 +132,59 @@
 
 [class*=ymaps][class*=-gototech] {
 	visibility: hidden !important;
+}
+
+@media only screen and (max-width: 991px) {
+	.s-map {
+		background: $blue-light;
+		&__nav {display: none}
+		&__map {height: 400px}
+		&__content {
+			overflow: hidden;
+		}
+		&__places-map {
+			display: flex;
+			justify-content: space-between;
+			position: relative;
+			top: 0;
+			max-width: 100%;
+			width: 100%;
+			margin-bottom: 20px;
+			padding: 0px;
+			background: transparent;
+			border-radius: 0;
+			font-size: 16px;
+			line-height: 20px;
+			overflow-x: auto;
+			z-index: 1;
+			button {
+				display: flex;
+				align-items: center;
+				flex-shrink: 0;
+				padding: 12px 10px;
+				background: $clreb;
+				color: $gray-dark;
+				img {display: none}
+				span {transition: .3s linear}
+				&:not(:first-child) {
+					margin-top: 0;
+					margin-left: 8px;
+				}
+				&:hover {
+					span {transform: translateY(0px)}
+				}
+				&:active {
+					span {color: $gray-dark}
+				}
+				&.active {
+					background: $white;
+					span {color: $text-dark}
+				}
+			}
+		}
+	}
+}
+
+#map-ctrl {
+	text-align: center;
 }

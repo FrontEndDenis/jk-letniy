@@ -7,27 +7,106 @@
 		top: 0px;
 		left: 15px;
 	}
-	&__title {margin-bottom: 55px}
-	&__download {
+	&__title {
+		margin-bottom: 55px;
+	}
+	&__document {
 		display: flex;
 		align-items: center;
 		min-height: 100px;
 		padding: 20px 30px;
 		background: $white;
+		font-size: 20px;
+		line-height: 150%;
 		transition: .3s linear;
 		&:hover {background: $accent3}
 		&:active {background: $orange-light}
 	}
-	&__icon {margin-right: 24px}
-	&__content {margin-top: 150px}
-	&__content-title {
-		margin-bottom: 46px;
-		font-size: 36px;
-		font-weight: 500;
-		line-height: 44px;
+	&__download {
+		margin-right: 24px;
+		&:hover {
+			svg {fill: $white}
+		}
 	}
-	&__content-text {line-height: 150%}
+	&__look {
+		display: none;
+	}
+	&__content {margin-top: 150px}
+	&__content-title {margin-bottom: 46px}
 	.col-xll-4.col-xl-6 {
 		&:nth-child(1n+5) {margin-top: 46px}
+	}
+}
+
+@media only screen and (max-width: 1709px) {
+	.s-document {
+		&__content {
+			.col-xll-4 {margin-top: 46px}
+		}
+		&__content-logo {
+			display: flex;
+			justify-content: center;
+		}
+		.col-xll-4.col-xl-6 {
+			&:nth-child(1n+5) {margin-top: 0}
+			&:nth-child(1n+4) {margin-top: 46px}
+		}
+	}
+}
+
+@media only screen and (max-width: 1199px) {
+	.s-document {
+		&__content {
+			margin-top: 100px;
+		}
+		&__document {font-size: 18px}
+		.col-xll-4.col-xl-6 {
+			&:nth-child(1n+4) {margin-top: 0}
+			&:nth-child(1n+3) {margin-top: 30px}
+		}
+	}
+}
+
+@media only screen and (max-width: 575px) {
+	.s-document {
+		padding: 50px 0 70px;
+		&__title {margin-bottom: 20px}
+		&__document {
+			min-height: 70px;
+			padding: 10px;
+			background: rgba(255, 255, 255, 0.5);
+			font-size: 16px;
+		}
+		&__download, &__look {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-shrink: 0;
+			width: 30px;
+			height: 30px;
+			margin-right: 10px;
+			background: $white;
+			border-radius: 50%;
+			cursor: pointer;
+			&:active {
+				background: $accent;
+				svg {fill: $white}
+			}
+			svg {fill: $accent}
+		}
+		&__download {
+			svg {
+				width: 15px;
+				height: 15px;
+			}
+		}
+		&__content {
+			margin-top: 50px;
+			.col-xll-4 {display: none}
+		}
+		&__content-title {margin-bottom: 20px}
+		.col-xll-4.col-xl-6 {
+			&:nth-child(1n+3) {margin-top: 10px}
+		}
 	}
 }

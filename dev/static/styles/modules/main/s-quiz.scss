@@ -19,21 +19,70 @@
 	&__title {
 		max-width: 864px;
 		margin-bottom: 56px;
-		font-size: 45px;
-		font-weight: 600;
-		line-height: 150%;
 	}
-	&__text {
-		margin-bottom: 64px;
-		font-size: 24px;
-		font-weight: 500;
-		line-height: 36px;
-	}
+	&__text {margin-bottom: 64px}
 	&__logo {
 		display: flex;
 		justify-content: center;
-		img {
-			margin-top: 40px;
+		img {margin-top: 40px}
+	}
+}
+
+@media only screen and (max-width: 1709px) {
+	.s-quiz {
+		padding: 87px 0;
+		&::after {content: url('../../../../static/images/general/decor-t.png')}
+	}
+}
+
+@media only screen and (max-width: 1199px) {
+	.s-quiz {
+		padding: 108px 0;
+		&__title {
+			margin-bottom: 50px;
+			font-size: 36px;
+			line-height: 130%;
+		}
+		&__text {
+			margin-bottom: 98px;
+			font-size: 20px;
+			line-height: 150%;
+		}
+		&__logo {
+			justify-content: flex-end;
+			img {margin-top: 0}
+		}
+		.col-lg-4 {
+			display: flex;
+			align-items: center;
+			justify-content: flex-end;
+		}
+	}
+}
+
+@media only screen and (max-width: 991px) {
+	.s-quiz {
+		.col-lg-4 {display: none}	
+	}
+}
+
+@media only screen and (max-width: 575px) {
+	.s-quiz {
+		padding: 40px 0 50px;
+		&::after {
+			content: url('../../../../static/images/general/decor-m.png');
+			top: 40px;
+		}
+		&__title {
+			margin-bottom: 20px;
+			font-size: 18px;
+			line-height: 24px;
+		}
+		&__text {
+			margin-bottom: 30px;
+			font-size: 14px;
+			font-weight: 300;
+			line-height: 22px;
 		}
 	}
 }

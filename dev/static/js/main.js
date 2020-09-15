@@ -76,30 +76,39 @@ function animationPhone() {
 
 animationPhone();
 
-function scrollHeader() {
-	document.addEventListener('wheel', () => {
-		let lY = 0;
-		let scrollTop = scrollY;
-		const h = document.querySelector('.header');
-		if(scrollTop > 0){
-			// h.classList.add('scroll-dwn');
-			h.classList.add('scroll');
-			// if (lY > scrollY) {
-			// 	h.classList.add('scroll');
-			// } else {
-			// 	h.classList.remove('scroll');
-			// }
-		} else{
-			h.classList.remove('scroll');
-			// h.classList.remove('scroll-dwn');
-		}
-		lY = scrollY;
-	});
+// function scrollHeader() {
+// 	document.addEventListener('wheel', () => {
+// 		let lY = 0;
+// 		let scrollTop = scrollY;
+// 		const h = document.querySelector('.header');
+// 		if(scrollTop > 0){
+// 			// h.classList.add('scroll-dwn');
+// 			h.classList.add('scroll');
+// 			// if (lY > scrollY) {
+// 			// 	h.classList.add('scroll');
+// 			// } else {
+// 			// 	h.classList.remove('scroll');
+// 			// }
+// 		} else{
+// 			h.classList.remove('scroll');
+// 			// h.classList.remove('scroll-dwn');
+// 		}
+// 		lY = scrollY;
+// 	});
+// }
+
+// scrollHeader();
+
+function animageHamburger() {
+	const hamb = document.querySelector('.header__hamburger .hamburger');
+
+	hamb.addEventListener('click', () => {
+		hamb.classList.contains('open') ? hamb.classList.remove('open') : hamb.classList.add('open')
+	})
+	
 }
 
-scrollHeader();
-
-
+animageHamburger()
 
 
 

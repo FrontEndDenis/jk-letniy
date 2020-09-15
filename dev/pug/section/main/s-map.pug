@@ -13,18 +13,18 @@ section.s-map
 			.s-mape__content.tab-content
 				#places.tab-pane.show.active(role='tabpanel')
 					.s-map__places-map
-						button(type='button')
+						button(type='button', data-value='one')
 							img(src='../../../../static/images/general/cafe.svg', alt='Кафе и рестораны')
-							| Кафе и рестораны (3)
-						button(type='button')
+							span Кафе и рестораны
+						button(type='button', data-value='two')
 							img(src='../../../../static/images/general/hospital.svg', alt='Аптеки и больницы')
-							| Аптеки и больницы (3)
-						button(type='button')
+							span Аптеки и больницы
+						button(type='button', data-value='three')
 							img(src='../../../../static/images/general/recreation.svg', alt='Отдых и развлечения')
-							| Отдых и развлечения (4)
-						button(type='button')
+							span Отдых и развлечения
+						button(type='button', data-value='four')
 							img(src='../../../../static/images/general/learning.svg', alt='Школы и детские сады')
-							| Школы и детские сады (3)
+							span Школы и детские сады
 				#driveway.tab-pane(role='tabpanel')
 					.s-map__places-map
 						.s-map__item-places.item-places

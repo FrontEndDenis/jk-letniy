@@ -1,37 +1,69 @@
 .s-feedback {
 	position: relative;
-	padding: 104px 0 84px;
+	padding: 104px 0 104px;
 	background: $accent;
 	color: $white;
 	overflow: hidden;
 	&::after {
-		content: url('../../../../static/images/general/decor-2.png');
+		content: url('../../../../static/images/general/decor-ts2.png');
 		position: absolute;
-		top: 0;
+		top: -200px;
+		right: -363px;
 		bottom: 0;
-		right: 0;
 		z-index: 1;
 	}
-	&__title {
-		font-size: 45px;
-		font-weight: 600;
-		line-height: 150%;
+	&__title, &__form {
+		position: relative;
+		z-index: 2;
 	}
 	&__form {
 		position: relative;
 		width: 100%;
 		z-index: 2;
-		.form-group {
+		form {
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
 		}
-		label {
+		.form-group {
 			max-width: 335px;
+			width: 100%;
 		}
 	}
 	.col-xll-5.col-xl-6 {
 		display: flex;
 		align-items: center;
+	}
+}
+
+@media only screen and (max-width: 1709px) {
+	.s-feedback {
+		&::after {top: -100px}
+		&__form {
+			form {display: block}
+			.form-group {
+				max-width: 100%;
+				margin-bottom: 56px;
+			}
+			button {max-width: 100%}
+		}
+		.col-xl-6.offset-xll-1 {margin-bottom: 56px}
+	}
+}
+
+@media only screen and (max-width: 1199px) {
+	.s-feedback {
+		&::after {right: -680px}
+		&__form {
+			.form-group {margin-bottom: 30px}
+		}
+	}
+}
+
+@media only screen and (max-width: 575px) {
+	.s-feedback {
+		padding: 35px 0 50px;
+		&::after {display: none}
+		.col-xl-6.offset-xll-1 {margin-bottom: 50px}
 	}
 }
