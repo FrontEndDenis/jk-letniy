@@ -33,11 +33,49 @@
 		}
 	}
 	&__contacts {
-		font-weight: 600;
 		a {
-			display: block;
+			position: relative;
+			display: inline-block;
+			font-size: 36px;
+			font-weight: 600;
+			line-height: 140%;
 			&:hover {color: $accent}
 			&:active {color: $accent3}
+			&::after {
+				display: none;
+				content: '';
+				position: absolute;
+				top: 50%;
+				left: 0;
+				margin-top: -2px;
+				width: 14px;
+				height: 4px;
+				background: $accent;
+			}
+		}
+	}
+	&__contact-text {
+		display: none;
+		margin-bottom: 8px;
+		font-size: 30px;
+		line-height: 140%;
+	}
+	&__by {
+		display: none;
+		position: relative;
+		margin-top: 50px;
+		padding-top: 12px;
+		font-size: 18px;
+		font-weight: 300;
+		&::before {
+			display: none;
+			content: '';
+			position: absolute;
+			top: 0;
+			right: 0;
+			left: 0;
+			height: 2px;
+			background: $white;
 		}
 	}
 	&__forms {
@@ -46,9 +84,7 @@
 			&:not(:first-child) {margin-top: 58px}
 		}
 	}
-	&__title {
-		margin-bottom: 46px;
-	}
+	&__title {margin-bottom: 46px}
 	&__text {
 		margin-bottom: 56px;
 	}
@@ -66,9 +102,83 @@
 
 @media only screen and (max-width: 1199px) {
 	.footer {
+		padding: 60px 0;
 		background: $purple-dark;
 		&__wrap {
+			order: 1;
+			margin-top: 100px;
 			&::after {display: none}
+		}
+		&__logo, &__navigation {display: none}
+		&__contacts {
+			display: flex;
+			flex-direction: column;
+			a {
+				padding-left: 26px;
+				font-size: 30px;
+				&::after {display: block}
+				&:not(:last-child) {margin-bottom: 50px}
+			}
+		}
+		&__contact-text, &__by {
+			display: block;
+		}
+		&__by {
+			&::before {display: block}
+		}
+		&__forms {
+			max-width: 100%;
+			color: $white;
+			.needs-validation {
+				.form-group {
+					label, input, span {color: $white}
+					input {border-bottom-color: $white}
+				}
+			}
+		}
+		&__checkbox {
+			.checkbox {
+				&__text {
+					&::after {
+						content: url('../../../../static/images/general/check-o.svg');
+						top: 3px;
+						left: 4px;
+					}
+				}
+			}
+		}
+		&__button {
+			button {
+				background: $white;
+				color: $purple-dark;
+				&:hover {background: $accent3}
+				&:active {background: $orange-light}
+			}
+		}
+		.col-xll-5.col-xl-6.offset-xll-1, .col-xl-5.offset-xl-1 {padding: 0px 15px}
+	}
+}
+
+@media only screen and (max-width: 575px) {
+	.footer {
+		&__wrap {margin-top: 80px}
+		&__contacts {
+			a {
+				font-size: 18px;
+				&:not(:last-child) {margin-bottom: 30px}
+			}
+		}
+		&__contact-text {font-size: 16px}
+		&__by {font-size: 14px}
+		&__title {margin-bottom: 20px}
+		&__checkbox {
+			margin: 30px 0;
+		}
+		&__button {
+			button {
+				height: 44px;
+				padding: 11px 20px;
+			}
 		}
 	}
 }

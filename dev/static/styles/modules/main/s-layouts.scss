@@ -1,0 +1,22 @@
+.s-layouts {
+	padding: 160px 0;
+	&__section-title {
+		position: absolute;
+		top: 0px;
+		left: 15px;
+	}
+	&__image-svg {
+		margin-top: 64px;
+		.plan {
+			cursor: pointer;
+			&__bg {
+				fill: $blue-light;
+				transition: .3s linear;
+			}
+			&:hover {
+				.plan__bg {fill:$orange-light}
+			}
+		}
+	}
+	.container {position: relative}
+}

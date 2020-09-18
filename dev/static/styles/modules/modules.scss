@@ -12,6 +12,7 @@
 @import "main/s-advantages";
 @import "main/advantages-complex";
 @import "main/s-quiz";
+@import "main/s-layouts";
 @import "main/s-feedback";
 @import "main/s-location";
 @import "main/s-map";
@@ -21,3 +22,5 @@
 // Карточки
 @import "cards/about-card";
 @import "cards/advantages-card";
+// Модальные окна
+@import "modal/modal";

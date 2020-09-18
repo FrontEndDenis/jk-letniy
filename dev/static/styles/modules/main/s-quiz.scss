@@ -5,11 +5,10 @@
 	color: $white;
 	overflow: hidden;
 	&::after {
-		content: url('../../../../static/images/general/decor.png');
+		content: url('../../../../static/images/general/decor.svg');
 		position: absolute;
-		top: 0;
-		bottom: 0;
-		right: 0;
+		top: -50px;
+		right: -400px;
 		z-index: 1;
 	}
 	&__title, &__text, &__button, &__logo {
@@ -31,7 +30,6 @@
 @media only screen and (max-width: 1709px) {
 	.s-quiz {
 		padding: 87px 0;
-		&::after {content: url('../../../../static/images/general/decor-t.png')}
 	}
 }
 
@@ -62,6 +60,9 @@
 
 @media only screen and (max-width: 991px) {
 	.s-quiz {
+		&::after {
+			right: -700px;
+		}
 		.col-lg-4 {display: none}	
 	}
 }
@@ -69,10 +70,7 @@
 @media only screen and (max-width: 575px) {
 	.s-quiz {
 		padding: 40px 0 50px;
-		&::after {
-			content: url('../../../../static/images/general/decor-m.png');
-			top: 40px;
-		}
+		&::after {display: none}
 		&__title {
 			margin-bottom: 20px;
 			font-size: 18px;

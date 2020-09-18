@@ -15,14 +15,17 @@ footer.footer
 								a(href='#') Местоположение
 							li
 								a(href='#') О застройщике
-					.footer__contacts.s-title-36
+					.footer__contacts
+						.footer__contact-text Вы можете позвонить нам
 						a(href='tel:+78003503120') 8 (800) 350-31-20
+						.footer__contact-text Или написать на электронную почту
 						a(href="mailto:info@jk-letniy.ru") info@jk-letniy.ru
+					.footer__by ЖК Летний © 2020
 			.col-xl-5.offset-xl-1
 				.footer__forms
 					.footer__title.s-title Нужна консультация?
 					.footer__text.s-text Оставьте свои контактные данные, и мы перезвоним, чтобы ответить на любые вопросы
-					form(action='', method='get')
+					form.needs-validation(action='', novalidate)
 						.form-group
 							label
 								input(type='input', maxlength='30', placeholder='Имя')

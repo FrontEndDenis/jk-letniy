@@ -5,8 +5,8 @@
 }
 
 .icon-arrow-down {
-	width: 9px;
-	height: 5px;
+	width: 18px;
+	height: 15px;
 	fill: $white;
 }
 
@@ -39,4 +39,11 @@
 	width: 32px;
 	height: 30px;
 	fill: $gray;
+}
+
+.icon-close {
+	width: 24px;
+	height: 24px;
+	fill: $text-dark;
+	stroke-width: 2px;
 }

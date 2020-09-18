@@ -1,0 +1,196 @@
+.modal-dialog {
+	&--wdh1400 {
+		max-width: 1400px;
+	}
+}
+
+.modal-content {
+	border: none;
+	border-radius: 0;
+}
+
+.modal-plan {
+	position: relative;
+	flex: 1 1 auto;
+	max-width: 1400px;
+	width: 100%;
+	padding: 40px 40px 100px;
+	background: $white;
+	box-shadow: 0px 2px 30px rgba(0, 0, 0, 0.2);
+	&__section-title {
+		position: absolute;
+		top: 70px;
+		left: 40px;
+	}
+	&__close {
+		position: absolute;
+		top: 40px;
+		right: 40px;
+		cursor: pointer;
+		&:hover {
+			svg {fill: $accent}
+		}
+		&:active {
+			svg {fill: $accent3}
+		}
+	}
+	&__content {
+		display: flex;
+		justify-content: space-between;
+		margin-left: 80px;
+	}
+	&__img {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex: 1 0 370px;
+		margin-right: 40px;
+	}
+	&__specifications {
+		margin: 56px 0;
+	}
+	&__main-specifications {
+		display: flex;
+		margin-bottom: 46px;
+	}
+	&__living-area {margin-left: 80px}
+	&__number {
+		margin-bottom: 12px;
+		color: $accent;
+		font-size: 48px;
+		font-weight: 600;
+		line-height: 33px;
+	}
+	&__text {
+		font-weight: 500;
+		line-height: 33px;
+	}
+	&__list {
+		li {
+			&:not(:last-child) {margin-bottom: 8px}
+		}
+		span {
+			margin-left: 4px;
+			font-weight: 600;
+		}
+	}
+	&__forms {
+		.form-group {
+			max-width: 320px;
+			margin-bottom: 14px;
+		}
+		button {max-width: 320px}
+		.policy {max-width: 300px}
+	}
+}
+
+.modal-feedback {
+	position: relative;
+	flex: 1 1 auto;
+	max-width: 1400px;
+	width: 100%;
+	padding: 100px 150px;
+	background: $white;
+	box-shadow: 0px 2px 30px rgba(0, 0, 0, 0.2);
+	overflow: hidden;
+	&__close {
+		position: absolute;
+		top: 40px;
+		right: 40px;
+		cursor: pointer;
+		&:hover {
+			svg {fill: $accent}
+		}
+		&:active {
+			svg {fill: $accent3}
+		}
+	}
+	&__titel {
+		position: relative;
+		max-width: 750px;
+		margin-bottom: 86px;
+		letter-spacing: .02em;
+		z-index: 2;
+	}
+	&__forms {
+		position: relative;
+		max-width: 640px;
+		z-index: 3;
+		.form-group {
+			&:not(:first-child) {margin-top: 70px}
+		}
+		button {
+			max-width: 370px;
+			margin-top: 96px;
+		}
+		.policy {
+			max-width: 370px;
+			font-size: 16px;
+			font-weight: 500;
+			line-height: 20px;
+		}
+	}
+	&__image {
+		position: absolute;
+		top: 50%;
+		right: 190px;
+		transform: translateY(-50%);
+		z-index: 2;
+	}
+	&::after {
+		content: url('../../../../static/images/general/decor-3.svg');
+		position: absolute;
+		bottom: -210px;
+		right: -480px;
+		z-index: 1;
+	}
+}
+
+@media only screen and (max-width: 1199px) {
+	.modal-feedback {
+		padding: 60px 50px;
+		&__image {
+			right: 80px;
+		}
+	}
+}
+
+@media only screen and (max-width: 991px) {
+	.modal-feedback {
+		&__titel {margin: 10px 0 46px}
+		&__forms {
+			.form-group {
+				&:not(:first-child) {margin-top: 46px}
+			}
+			button {
+				margin-top: 56px;
+			}
+		}
+		&__image {display: none}
+	}
+}
+
+@media only screen and (max-width: 575px) {
+	.modal-feedback {
+		padding: 30px 15px;
+		&__close {
+			top: 15px;
+			right: 15px;
+		}
+		&__forms {
+			.form-group {
+				&:not(:first-child) {margin-top: 46px}
+			}
+			button {
+				max-width: 100%;
+				margin-top: 36px;
+			}
+			.policy {
+				max-width: 100%;
+				font-size: 12px;
+			}
+		}
+		&__image {display: none}
+		&::after {display: none}
+	}
+}

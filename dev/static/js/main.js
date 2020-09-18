@@ -73,31 +73,27 @@ function animationPhone() {
 		n.classList.remove('active')
 	}
 }
-
 animationPhone();
 
-// function scrollHeader() {
-// 	document.addEventListener('wheel', () => {
-// 		let lY = 0;
-// 		let scrollTop = scrollY;
-// 		const h = document.querySelector('.header');
-// 		if(scrollTop > 0){
-// 			// h.classList.add('scroll-dwn');
-// 			h.classList.add('scroll');
-// 			// if (lY > scrollY) {
-// 			// 	h.classList.add('scroll');
-// 			// } else {
-// 			// 	h.classList.remove('scroll');
-// 			// }
-// 		} else{
-// 			h.classList.remove('scroll');
-// 			// h.classList.remove('scroll-dwn');
-// 		}
-// 		lY = scrollY;
-// 	});
-// }
-
-// scrollHeader();
+function scrollHeader() {
+	const header = document.querySelector('.header');
+	let scrollTop = 0;
+	
+	document.addEventListener('scroll', () => {
+		if (scrollY > 0) {
+			if (scrollTop > scrollY) {
+				header.classList.remove('scroll-dwn');
+			} else {
+				header.classList.add('scroll-dwn');
+			}
+			scrollTop = scrollY;
+			header.classList.add('scroll');
+		} else {
+			header.classList.remove('scroll');
+		}
+	});
+}
+scrollHeader();
 
 function animageHamburger() {
 	const hamb = document.querySelector('.header__hamburger .hamburger');
@@ -105,50 +101,222 @@ function animageHamburger() {
 	hamb.addEventListener('click', () => {
 		hamb.classList.contains('open') ? hamb.classList.remove('open') : hamb.classList.add('open')
 	})
-	
+
 }
+animageHamburger();
 
-animageHamburger()
+// Аккардион
+function accardionAnimation() {
+	let acc = document.querySelectorAll('.accordion');
 
-
-
-
-
-
-
-
-function ajax(form) {
-	$.ajax({
-		type: "POST",
-		url: "form.php",
-		data: form.serialize()
-	})
-		.done(function () {
-			$(".modal").modal("hide");
-
-			setTimeout(() => $('#modal-application').modal('show'), 100);
-
-			if (form.attr('id') === 'form-callback') {
-				yaCounter66345070.reachGoal('otpravka_zvonok'); gtag('event', 'zvonok', { 'event_category': 'otpravit_zvonok', 'event_action': 'click' }); gtag('event', 'page_view', { 'page_path': '/otpavka-zvonok-form' });
-			}
-			if (form.attr('id') === 'form-price') {
-				yaCounter66345070.reachGoal('otpravka_stoimost'); gtag('event', 'zapros', { 'event_category': 'otpravit_stoimost', 'event_action': 'click' }); gtag('event', 'page_view', { 'page_path': '/otpavka-stoimost-form' });
-			}
-			if (form.attr('id') === 'form-plan') {
-				yaCounter66345070.reachGoal('planirovka _otpravka'); gtag('event', 'planirovka', { 'event_category': 'otpravit_planirovka', 'event_action': 'click' }); gtag('event', 'page_view', { 'page_path': '/otpavka-planirovka-form' });
-			}
-			if (form.attr('id') === 'form-consultation') {
-				yaCounter66345070.reachGoal('otpravka_voprosy'); gtag('event', 'voprosy', { 'event_category': 'otpravform_voprosy', 'event_action': 'click' }); gtag('event', 'page_view', { 'page_path': '/otpavka-voprosy-form' });
-			}
-
-			form.trigger("reset");
-		})
-		.fail(function (jqXHR, textStatus) {
-			console.error(textStatus);
-		})
-		.always(function () {
-			setTimeout(function () {
-				form.find('[type=submit]').prop('disabled', false);
-			}, 600);
+	acc.forEach(item => {
+		item.addEventListener('click', function() {
+			this.classList.toggle("active");
+			let panel = this.nextElementSibling;
+			if (panel.style.maxHeight) {
+			  	panel.style.maxHeight = null;
+			} else {
+			  	panel.style.maxHeight = panel.scrollHeight + "px";
+			} 
 		});
+	})
 }
+accardionAnimation();
+
+function layoutsInfo() {
+	let obj = [{
+		title: '1-комнатная квартира',
+		area: '35.3 м²',
+		livingArea: '26.6 м²',
+		roomArea: '21.1 м²',
+		kitchenArea: '5.5 м²',
+		wcArea: '4.4 м²',
+		ceilingHeight: '3 м',
+		img: 'static/images/content/plan-1.png',
+		id: 0
+	}, {
+		title: 'Студия',
+		area: '31.5 м²',
+		livingArea: '26.6 м²',
+		roomArea: '21.1 м²',
+		kitchenArea: '0 м²',
+		wcArea: '3.8 м²',
+		ceilingHeight: '3 м',
+		img: 'static/images/content/plan-2.png',
+		id: 1
+	}, {
+		title: 'Студия',
+		area: '28.4 м²',
+		livingArea: '18 м²',
+		roomArea: '18 м²',
+		kitchenArea: '0 м²',
+		wcArea: '3.8 м²',
+		ceilingHeight: '3 м',
+		img: 'static/images/content/plan-3.png',
+		id: 2
+	}, {
+		title: 'Студия',
+		area: '28.4 м²',
+		livingArea: '18 м²',
+		roomArea: '18 м²',
+		kitchenArea: '0 м²',
+		wcArea: '3.8 м²',
+		ceilingHeight: '3 м',
+		img: 'static/images/content/plan-4.png',
+		id: 3
+	}, {
+		title: 'Студия',
+		area: '31.5 м²',
+		livingArea: '21.1 м²',
+		roomArea: '21.1 м²',
+		kitchenArea: '0 м²',
+		wcArea: '3.8 м²',
+		ceilingHeight: '3 м',
+		img: 'static/images/content/plan-5.png',
+		id: 4
+	}, {
+		title: '1-комнатная квартира',
+		area: '35.3 м²',
+		livingArea: '26.6 м²',
+		roomArea: '21.1 м²',
+		kitchenArea: '5.5 м²',
+		wcArea: '4.4 м²',
+		ceilingHeight: '3 м',
+		img: 'static/images/content/plan-6.png',
+		id: 5
+	}, {
+		title: '1-комнатная квартира',
+		area: '35.3 м²',
+		livingArea: '26.6 м²',
+		roomArea: '21.1 м²',
+		kitchenArea: '5.5 м²',
+		wcArea: '4.4 м²',
+		ceilingHeight: '3 м',
+		img: 'static/images/content/plan-7.png',
+		id: 6
+	}, {
+		title: 'Студия',
+		area: '23.9 м²',
+		livingArea: '15.2 м²',
+		roomArea: '15.2 м²',
+		kitchenArea: '0 м²',
+		wcArea: '3.6 м²',
+		ceilingHeight: '3 м',
+		img: 'static/images/content/plan-8.png',
+		id: 7
+	}, {
+		title: 'Студия',
+		area: '23.9 м²',
+		livingArea: '15.2 м²',
+		roomArea: '15.2 м²',
+		kitchenArea: '0 м²',
+		wcArea: '3.6 м²',
+		ceilingHeight: '3 м',
+		img: 'static/images/content/plan-9.png',
+		id: 8
+	}, {
+		title: 'Студия',
+		area: '23.9 м²',
+		livingArea: '15.2 м²',
+		roomArea: '15.2 м²',
+		kitchenArea: '0 м²',
+		wcArea: '3.6 м²',
+		ceilingHeight: '3 м',
+		img: 'static/images/content/plan-10.png',
+		id: 9
+	}, {
+		title: 'Студия',
+		area: '23.9 м²',
+		livingArea: '15.2 м²',
+		roomArea: '15.2 м²',
+		kitchenArea: '0 м²',
+		wcArea: '3.6 м²',
+		ceilingHeight: '3 м',
+		img: 'static/images/content/plan-11.png',
+		id: 10
+	}, {
+		title: '1-комнатная квартира',
+		area: '35.3 м²',
+		livingArea: '26.6 м²',
+		roomArea: '21.1 м²',
+		kitchenArea: '5.5 м²',
+		wcArea: '4.4 м²',
+		ceilingHeight: '3 м',
+		img: 'static/images/content/plan-12.png',
+		id: 11
+	}];
+
+	const plan = document.querySelectorAll('.plan');
+
+	plan.forEach(item => {
+		item.addEventListener('click', () => {
+			planModal(item);
+		});
+	});
+
+	function planModal(el) {
+		let dataId = el.getAttribute('id-plan'),
+			title = obj[dataId].title,
+			area = obj[dataId].area,
+			livingArea = obj[dataId].livingArea,
+			roomArea = obj[dataId].roomArea,
+			kitchenArea = obj[dataId].kitchenArea,
+			wcArea = obj[dataId].wcArea,
+			ceilingHeight = obj[dataId].ceilingHeight,
+			img = obj[dataId].img;
+
+		const modal = document.querySelector('#modal');
+
+		document.querySelector('#title').textContent = title;
+		document.querySelector('#area').textContent = area;
+		document.querySelector('#living-area').textContent = livingArea;
+		document.querySelector('#room').innerHTML = 'Площадь комнаты:' + '<span>' + roomArea + '</span>';
+		document.querySelector('#kitchen').innerHTML = 'Площадь комнаты:' + '<span>' + kitchenArea + '</span>';
+		document.querySelector('#wc').innerHTML = 'Площадь комнаты:' + '<span>' + wcArea + '</span>';
+		document.querySelector('#ceiling').innerHTML = 'Площадь комнаты:' + '<span>' + ceilingHeight + '</span>';
+		document.querySelector('#img').setAttribute('src', img);
+		openModal(modal);
+	}
+}
+
+function openModal(el) {
+	$(el).modal();
+}
+layoutsInfo();
+
+
+// function ajax(form) {
+// 	$.ajax({
+// 		type: "POST",
+// 		url: "form.php",
+// 		data: form.serialize()
+// 	})
+// 		.done(function () {
+// 			$(".modal").modal("hide");
+
+// 			setTimeout(() => $('#modal-application').modal('show'), 100);
+
+// 			if (form.attr('id') === 'form-callback') {
+// 				yaCounter66345070.reachGoal('otpravka_zvonok'); gtag('event', 'zvonok', { 'event_category': 'otpravit_zvonok', 'event_action': 'click' }); gtag('event', 'page_view', { 'page_path': '/otpavka-zvonok-form' });
+// 			}
+// 			if (form.attr('id') === 'form-price') {
+// 				yaCounter66345070.reachGoal('otpravka_stoimost'); gtag('event', 'zapros', { 'event_category': 'otpravit_stoimost', 'event_action': 'click' }); gtag('event', 'page_view', { 'page_path': '/otpavka-stoimost-form' });
+// 			}
+// 			if (form.attr('id') === 'form-plan') {
+// 				yaCounter66345070.reachGoal('planirovka _otpravka'); gtag('event', 'planirovka', { 'event_category': 'otpravit_planirovka', 'event_action': 'click' }); gtag('event', 'page_view', { 'page_path': '/otpavka-planirovka-form' });
+// 			}
+// 			if (form.attr('id') === 'form-consultation') {
+// 				yaCounter66345070.reachGoal('otpravka_voprosy'); gtag('event', 'voprosy', { 'event_category': 'otpravform_voprosy', 'event_action': 'click' }); gtag('event', 'page_view', { 'page_path': '/otpavka-voprosy-form' });
+// 			}
+
+// 			form.trigger("reset");
+// 		})
+// 		.fail(function (jqXHR, textStatus) {
+// 			console.error(textStatus);
+// 		})
+// 		.always(function () {
+// 			setTimeout(function () {
+// 				form.find('[type=submit]').prop('disabled', false);
+// 			}, 600);
+// 		});
+// }

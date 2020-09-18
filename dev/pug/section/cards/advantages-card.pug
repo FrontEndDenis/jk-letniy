@@ -1,14 +1,16 @@
-mixin advantagesCard(image, titel, text, num)
-	.advantages-card
+mixin advantagesCard(image, titel, text, num, cls)
+	.advantages-card(class=cls)
 		.advantages-card__image
 			img(src='../../../static/images/content/'+image+'.jpg', alt='')
-		.advantages-card__header
-			.advantages-card__number=num
-			.advantages-card__title=titel
+		.advantages-card__header.accordion
+			.advantages-card__wrap
+				.advantages-card__number=num
+				.advantages-card__title=titel
 			.advantages-card__icon
 				+icon('arrow-down')
-		.advantages-card__hidden
-			.advantages-card__h-titel=titel
-			.advantages-card__h-text=text
-			.advantages-card__h-image
-				img(src='../../../static/images/content/'+image+'.jpg', alt='')
+		.advantages-card__wrap-hidden
+			.advantages-card__hidden
+				.advantages-card__h-titel=titel
+				.advantages-card__h-text=text
+				.advantages-card__h-image
+					img(src='../../../static/images/content/'+image+'.jpg', alt='')

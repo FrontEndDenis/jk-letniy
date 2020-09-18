@@ -22,22 +22,43 @@
 		left: 50px;
 		z-index: 2;
 	}
+	&__wrap {display: flex}
 	&__title {
 		color: $white;
 		font-size: 45px;
 		font-weight: 600;
 		line-height: 150%;
 	}
-	&__hidden {
+	&__number {
+		margin-right: 16px;
+		font-size: 36px;
+		font-weight: 600;
+		line-height: 150%;
+	}
+	&__icon {
+		display: none;
+		align-items: center;
+		justify-content: center;
+		flex-shrink: 0;
+		width: 35px;
+		height: 35px;
+		background: $accent;
+		border-radius: 50%;
+	}
+	&__wrap-hidden {
 		position: absolute;
 		top: 0;
 		right: 0;
 		bottom: 0;
 		left: 0;
-		padding: 60px 50px;
-		background: $white;
+		transition: .3s linear;
 		transform: translateY(100%);
 		z-index: 3;
+	}
+	&__hidden {
+		height: 100%;
+		padding: 60px 50px;
+		background: $white;
 	}
 	&__h-titel {
 		margin-bottom: 75px;
@@ -50,17 +71,117 @@
 		font-weight: 500;
 		line-height: 33px;
 	}
+	&__h-image {
+		height: 200px;
+		margin-top: 20px;
+		img {
+			width: 100%;
+			height: 100%;
+		}
+	}
 	&__number, &__h-image {
 		display: none;
+	}
+	&:hover {
+		.advantages-card__hidden {
+			transform: translateY(0);
+		}
 	}
 }
 
 @media only screen and (max-width : 1709px) {
 	.advantages-card {
+		display: flex;
+		justify-content: space-between;
+		height: 358px;
+		&__image {
+			position: relative;
+			max-width: 460px;
+		}
+		&__header {display: none}
+		&__wrap-hidden {
+			position: relative;
+			max-width: 460px;
+			padding-right: 60px;
+			transform: translateY(0);
+		}
+		&__hidden {
+			padding: 0;
+			background: transparent;
+			
+		}
+		&__h-titel {margin-bottom: 45px}
+		&.right {
+			flex-direction: row-reverse;
+			.advantages-card__wrap-hidden {padding-right: 0}
+		}
+	}
+}
+
+@media only screen and (max-width: 1199px) {
+	.advantages-card {
 		&__image {
 			position: relative;
 			max-width: 400px;
 		}
-		&__header {display: none}
+		&__title {font-size: 36px}
+		&__wrap-hidden {
+			max-width: 400px;
+			padding-right: 40px;
+		}
+		&__h-titel {font-size: 36px}
+		&__h-text {font-size: 20px}
+	}
+}
+
+@media only screen and (max-width: 991px) {
+	.advantages-card {
+		display: block;
+		height: auto;
+		&__image, &__h-titel {display: none}
+		&__header {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			position: relative;
+			top: 0;
+			left: 0;
+			padding: 20px 15px;
+			background: rgba(255, 255, 255, 0.5);
+			cursor: pointer;
+		}
+		&__title {
+			color: $text-dark;
+			font-weight: 500;
+		}
+		&__number, &__h-image {display: block}
+		&__icon {display: flex}
+		&__wrap-hidden {
+			max-width: 100%;
+			max-height: 0;
+		}
+		&__hidden {
+			padding: 20px 15px !important;
+			background: rgba(255, 255, 255, 0.3);
+		}
+		&.right {
+			flex-direction: row;
+		}
+	}
+}
+
+@media only screen and (max-width: 575px) {
+	.advantages-card {
+		&__number, &__title {
+			font-size: 20px;
+		}
+		&__icon {
+			width: 30px;
+			height: 30px;
+		}
+		&__hidden {
+			padding: 12px 10px;
+		}
+		&__h-text {font-size: 16px}
 	}
 }
