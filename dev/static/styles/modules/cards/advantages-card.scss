@@ -83,7 +83,7 @@
 		display: none;
 	}
 	&:hover {
-		.advantages-card__hidden {
+		.advantages-card__wrap-hidden {
 			transform: translateY(0);
 		}
 	}
@@ -182,6 +182,6 @@
 		&__hidden {
 			padding: 12px 10px;
 		}
-		&__h-text {font-size: 16px}
+		&__h-text {font-size: 14px}
 	}
 }

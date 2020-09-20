@@ -5,6 +5,19 @@
 		top: 0px;
 		left: 15px;
 	}
+	&__slider {
+		display: none !important;
+		margin-top: 36px;
+	}
+	&__item {
+		height: 230px;
+		img {
+			max-width: 100%;
+			width: auto !important;
+			height: 100%;
+			margin: 0 auto;
+		}
+	}
 	&__image-svg {
 		margin-top: 64px;
 		.plan {
@@ -19,4 +32,23 @@
 		}
 	}
 	.container {position: relative}
+}
+
+@media only screen and (max-width: 1199px) {
+	.s-layouts {
+		padding: 100px 0;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	.s-layouts {
+		&__image-svg {display: none}
+		&__slider {
+			display: block !important;
+		}
+	}
+}
+
+@media only screen and (max-width: 575px) {
+	.s-layouts {padding: 50px 0}
 }

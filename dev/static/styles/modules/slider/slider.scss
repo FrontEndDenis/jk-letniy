@@ -39,7 +39,7 @@
 			&.active {
 				background: $accent !important;
 			}
-			&:not(:last-child) {margin-right: 15px}
+			&:not(:last-child) {margin-right: 10px}
 		}
 	}
 	.owl-dots {
@@ -54,6 +54,20 @@
 		button {
 			&.owl-next {right: 15px}
 			&.owl-prev {left: 15px}
+		}
+	}
+	.s-layouts {
+		&__slider {
+			&.owl-carousel {
+				button {
+					&.owl-next, &.owl-prev {
+						width: 30px;
+						height: 30px;
+					}
+					&.owl-next {right: 0px}
+					&.owl-prev {left: 0px}
+				}
+			}
 		}
 	}
 }

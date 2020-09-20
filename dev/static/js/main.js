@@ -24,6 +24,18 @@ $(document).ready(function () {
 			}
 		}
 	});
+	$('.s-layouts__slider').owlCarousel({
+		loop: true,
+		nav: true,
+		smartSpeed: 1500,
+		dots: true,
+		navText: ['<svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.559514 5.4696L5.30281 0.726447C5.60454 0.424569 6.09375 0.424569 6.39533 0.726447C6.69694 1.02806 6.69694 1.51724 6.39533 1.81882L2.19825 6.01578L6.39521 10.2126C6.69682 10.5143 6.69682 11.0035 6.39521 11.3051C6.0936 11.6068 5.60442 11.6068 5.30269 11.3051L0.559392 6.56185C0.408587 6.41097 0.333271 6.21344 0.333271 6.01581C0.333271 5.81808 0.408734 5.6204 0.559514 5.4696Z"/></svg>', '<svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.44048 6.5304L1.69718 11.2736C1.39545 11.5754 0.906245 11.5754 0.604661 11.2736C0.303052 10.9719 0.303052 10.4828 0.604661 10.1812L4.80175 5.98422L0.604785 1.7874C0.303176 1.48567 0.303176 0.996535 0.604785 0.694926C0.906394 0.393195 1.39557 0.393195 1.6973 0.694926L6.4406 5.43815C6.5914 5.58903 6.66672 5.78656 6.66672 5.98419C6.66672 6.18192 6.59126 6.3796 6.44048 6.5304Z"/></svg>'],
+		responsive: {
+			0: {
+				items: 1,
+			}
+		}
+	});
 });
 
 
@@ -122,6 +134,22 @@ function accardionAnimation() {
 	})
 }
 accardionAnimation();
+
+function scrollAnimation() {
+	const anchors = document.querySelectorAll('a[href*="#"]');
+
+	anchors.forEach(item => {
+		item.addEventListener('click', function (e) {
+			e.preventDefault()
+			const blockID = item.getAttribute('href').substr(1)
+			document.getElementById(blockID).scrollIntoView({
+				behavior: 'smooth',
+				block: 'start'
+			});
+		});
+	});
+}
+scrollAnimation();
 
 function layoutsInfo() {
 	let obj = [{

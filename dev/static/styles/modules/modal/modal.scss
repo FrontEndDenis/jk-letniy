@@ -36,15 +36,14 @@
 	}
 	&__content {
 		display: flex;
-		justify-content: space-between;
 		margin-left: 80px;
 	}
 	&__img {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		flex: 1 0 370px;
-		margin-right: 40px;
+		flex: 0 1 370px;
+		margin-right: 100px;
 	}
 	&__specifications {
 		margin: 56px 0;
@@ -147,6 +146,22 @@
 }
 
 @media only screen and (max-width: 1199px) {
+	.modal-plan {
+		&__img {
+			flex: 0 300px;
+			margin-right: 40px;
+		}
+		&__specifications {
+			margin: 30px 0 46px;
+		}
+		&__number {
+			margin-bottom: 8px;
+			font-size: 38px;
+		}
+		&__text, &__list {
+			font-size: 18px;
+		}
+	}
 	.modal-feedback {
 		padding: 60px 50px;
 		&__image {
@@ -156,6 +171,18 @@
 }
 
 @media only screen and (max-width: 991px) {
+	.modal-plan {
+		padding: 40px 40px 60px;
+		&__img {display: none}
+		&__right {
+			width: 100%;
+		}
+		&__forms {
+			.form-group, button, .policy {
+				max-width: 100%;
+			}
+		}
+	}
 	.modal-feedback {
 		&__titel {margin: 10px 0 46px}
 		&__forms {
@@ -171,6 +198,41 @@
 }
 
 @media only screen and (max-width: 575px) {
+	.modal-plan {
+		padding: 40px 15px;
+		&__section-title {display: none}
+		&__close {
+			top: 15px;
+			right: 15px;
+		}
+		&__content {
+			margin-left: 0px;
+		}
+		&__specifications {
+			margin: 15px 0 46px;
+		}
+		&__number {
+			margin-bottom: 4px;
+			font-size: 24px;
+			line-height: 26px;
+		}
+		&__text, &__list {
+			font-size: 16px;
+		}
+		&__main-specifications {
+			flex-direction: column;
+			margin-bottom: 20px;
+		}
+		&__living-area {
+			margin-top: 12px;
+			margin-left: 0;
+		}
+		&__forms {
+			.policy {
+				font-size: 12px;
+			}
+		}
+	}
 	.modal-feedback {
 		padding: 30px 15px;
 		&__close {
