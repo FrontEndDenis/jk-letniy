@@ -102,7 +102,7 @@
 
 @media only screen and (max-width: 1199px) {
 	.footer {
-		padding: 60px 0;
+		padding: 60px 0 15px;
 		background: $purple-dark;
 		&__wrap {
 			order: 1;
@@ -141,8 +141,6 @@
 				&__text {
 					&::after {
 						content: url('../../../../static/images/general/check-o.svg');
-						top: 3px;
-						left: 4px;
 					}
 				}
 			}
@@ -169,15 +167,21 @@
 			}
 		}
 		&__contact-text {font-size: 16px}
-		&__by {font-size: 14px}
+		&__by {
+			font-size: 14px;
+			&::before {
+				left: -15px;
+				right: -15px;
+			}
+		}
 		&__title {margin-bottom: 20px}
 		&__checkbox {
 			margin: 30px 0;
 		}
 		&__button {
 			button {
-				height: 44px;
-				padding: 11px 20px;
+				height: 50px;
+				padding: 12px 20px;
 			}
 		}
 	}

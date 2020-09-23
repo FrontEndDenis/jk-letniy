@@ -1,0 +1,501 @@
+.quiz-modal
+	.quiz
+		button.quiz__close(type='button')
+			span Закрыть
+		.quiz-wrapper
+			.quiz-start
+				.quiz-item
+					.quiz-item__inner.quiz-item__inner_no-aside
+						.quiz-item__content
+							.quiz-content
+								.quiz-content__inner
+									.quiz-content__left
+										.quiz-left
+											.quiz-left__head Подберем новостройку под вас
+											.quiz-left__body
+												.quiz-left__number.g-text Опрос
+												.quiz-left__title Найдите квартиру мечты за 4 вопроса
+												.quiz-left__txt Мы вышлем подборку квартир, индивидуально под ваши параметры
+												button.q-btn.first-step__btn
+													span Первый вопрос
+													img.icon-arrow(src='static/images/general/quiz/next.svg', alt='')
+											.quiz-left__foot
+												.quiz-left-progress
+													.quiz-left-progress__item.quiz-left-progress__item_start
+														.quiz-left-progress__number Всего лишь 4 вопроса
+														.quiz-left-progress__line
+									.quiz-content__right.quiz-content__right_no-padding
+										.first-step__inner
+											.first-step__inner-top
+												.first-step__inner-img
+													img(src='static/images/general/quiz/first4.jpg', loading='lazy', alt='')
+											.first-step__inner-bottom
+												.receive.receive_has-title
+													.receive-title
+														| После опроса 
+														br
+														| вы получите:
+													.receive-list
+														.receive-list__item
+															.receive-card.receive-card_gray
+																.receive-card__inner
+																	.receive-card__img
+																		img(src='static/images/general/quiz/receive.png', alt='')
+																	.receive-card__txt Подборку квартир под бюджет и цели
+														.receive-list__item
+															.receive-card.receive-card_gray
+																.receive-card__inner
+																	.receive-card__img
+																		img(src='static/images/general/quiz/receive1.png', alt='')
+																	.receive-card__txt Скидку 100 000₽ на покупку 
+			.quiz-body
+				.quiz-item__progress.quiz-item__progress_mobile
+					.quiz-progress-mobile
+						.quiz-progress-mobile__steps
+							.quiz-progress-mobile__active 01
+							span /
+							.quiz-progress-mobile__count 04
+						.quiz-progress
+							span
+					.quiz-controls
+						button.quiz-controls__prev.quiz-controls__prev_small
+							svg(width='18', height='9', viewBox='0 0 18 9', fill='none', xmlns='http://www.w3.org/2000/svg')
+								path(d='M17 4.5H1.89374M4.9217 1L1.06875 4.34948C0.977086 4.42917 0.977086 4.57083 1.06875 4.65052L4.9217 8', stroke='url(#my-cool-gradient)', stroke-width='1.3', stroke-linecap='round')
+						button.quiz-controls__next.q-btn.quiz-controls__next-small
+							span Далее
+							img.icon-arrow(src='static/images/general/quiz/next.svg', alt='')
+				.quiz-item
+					.quiz-item__inner.quiz-item__inner_no-foot
+						.quiz-item__content
+							#step1.quiz-step.quiz-step_active(data-step='1')
+								.quiz-content.quiz-content_sidebar
+									.quiz-content__inner
+										.quiz-content__left
+											.quiz-left.quiz-left_main
+												.quiz-left__head Подберем новостройку под вас
+												.quiz-left__body
+													.quiz-left__number.g-text 01
+													.quiz-left__title.quiz-title Какая площадь квартиры вам интересна?
+													.quiz-left__miss можно пропустить
+													.quiz-left__several
+														span можно выбрать несколько
+												.quiz-left__foot
+													.quiz-left-progress
+										.quiz-content__right
+											.quiz-hint
+												.quiz-hint__icon
+													span ?
+												.quiz-hint__txt Выберите площадь квартиры, которая соответствует вашим предпочтениям
+											.quiz-option
+												.quiz-option__top
+													.quiz-mobile-info
+														.quiz-mobile-info__txt
+															.quiz-hidden-txt
+																p В В ЖК Летний присутствуют как небольшие студии, так и однокомнатные квартиры.
+																p
+																	| Застройщик предусмотрел объединение нескольких квартир на этаже. Такой вариант идеально подойдет тем, кому нужно больше пространства.
+														.quiz-mobile-info__manager
+														button.quiz-mobile-info__btn
+															img(src='static/images/general/quiz/down.svg', alt='')
+													.quiz-option__img
+														img(src='static/images/general/quiz/option1.jpg', loading='lazy', alt='')
+												.quiz-option__bottom
+													.quiz-option-list.quiz-inputs
+														.quiz-option-list__item
+															label.quiz-option-item
+																input.quiz-option-item__input.quiz-input(type='checkbox', name='2')
+																span.quiz-option-item__checked
+																span.quiz-option-item__txt.quiz-input-txt Студия 25,0 – 28,4 м²
+														.quiz-option-list__item
+															label.quiz-option-item
+																input.quiz-option-item__input.quiz-input(type='checkbox', name='2')
+																span.quiz-option-item__checked
+																span.quiz-option-item__txt.quiz-input-txt 1к квартира 30,0 – 35,3 м²
+														.quiz-option-list__item
+															label.quiz-option-item
+																input.quiz-option-item__input.quiz-input(type='checkbox', name='2')
+																span.quiz-option-item__checked
+																span.quiz-option-item__txt.quiz-input-txt Посмотреть все варианты
+														.quiz-option-list__item
+															label.quiz-option-item
+																input.quiz-option-item__input.quiz-input(type='checkbox', name='2')
+																span.quiz-option-item__checked.quiz-option-item__checked_enter
+																.quiz-option-item__enter
+																	input.quiz-option-item__enter-input(type='text', maxlength='80', placeholder='Другое')
+																	.quiz-option-item__enter-count
+																		span 0
+																		| / 80
+											.quiz-item__progress
+												.quiz-progress-mobile
+													.quiz-progress-mobile__steps
+														.quiz-progress-mobile__active 01
+														span /
+														.quiz-progress-mobile__count 04
+													.quiz-progress
+														span
+												.quiz-controls
+													button.quiz-controls__prev.quiz-controls__prev_small
+														svg(width='18', height='9', viewBox='0 0 18 9', fill='none', xmlns='http://www.w3.org/2000/svg')
+															path(d='M17 4.5H1.89374M4.9217 1L1.06875 4.34948C0.977086 4.42917 0.977086 4.57083 1.06875 4.65052L4.9217 8', stroke='url(#my-cool-gradient)', stroke-width='1.3', stroke-linecap='round')
+													button.quiz-controls__next.q-btn.quiz-controls__next-small
+														span Далее
+														img.icon-arrow(src='static/images/general/quiz/next.svg', alt='')
+							#step2.quiz-step(data-step='2')
+								.quiz-content.quiz-content_sidebar
+									.quiz-content__inner
+										.quiz-content__left
+											.quiz-left.quiz-left_main
+												.quiz-left__head Выберите этажи, на которых хотите жить
+												.quiz-left__body
+													.quiz-left__number.g-text 02
+													.quiz-left__title.quiz-title Выберите этажи, на которых хотите жить
+													.quiz-left__miss можно пропустить
+													.quiz-left__several
+														span можно выбрать несколько
+												.quiz-left__foot
+													.quiz-left-progress
+										.quiz-content__right
+											.quiz-hint
+												.quiz-hint__icon
+													span ?
+												.quiz-hint__txt Выберите диапазон этажей, который соответствует вашим предпочтениям
+											.quiz-mobile-info
+												.quiz-mobile-info__txt
+													.quiz-hidden-txt
+														p Наш жилой комплекс представляет собой семь 12-этажных зданий.
+														p Сдача первого дома – 3 квартал 2022 года
+												.quiz-mobile-info__manager
+												button.quiz-mobile-info__btn
+													img(src='static/images/general/quiz/down.svg', alt='')
+											.quiz-range
+												.quiz-range__head
+													.quiz-range__value
+														| От
+														input.quiz-range__value-input.input-from(type='text')
+													.quiz-range__value
+														| До
+														input.quiz-range__value-input.input-to(type='text')
+												.quiz-range__body
+													.slider-range
+											.quiz-option
+												.quiz-option__full
+													.quiz-option-list.quiz-inputs
+														.quiz-option-list__item
+															label.quiz-option-item
+																input.quiz-option-item__input.floor-max.quiz-input(type='checkbox', name='floor')
+																span.quiz-option-item__checked
+																span.quiz-option-item__txt.quiz-input-txt Не последний
+											.quiz-item__progress
+												.quiz-progress-mobile
+													.quiz-progress-mobile__steps
+														.quiz-progress-mobile__active 01
+														span /
+														.quiz-progress-mobile__count 04
+													.quiz-progress
+														span
+												.quiz-controls
+													button.quiz-controls__prev.quiz-controls__prev_small
+														svg(width='18', height='9', viewBox='0 0 18 9', fill='none', xmlns='http://www.w3.org/2000/svg')
+															path(d='M17 4.5H1.89374M4.9217 1L1.06875 4.34948C0.977086 4.42917 0.977086 4.57083 1.06875 4.65052L4.9217 8', stroke='url(#my-cool-gradient)', stroke-width='1.3', stroke-linecap='round')
+													button.quiz-controls__next.q-btn.quiz-controls__next-small
+														span Далее
+														img.icon-arrow(src='static/images/general/quiz/next.svg', alt='')
+							#step3.quiz-step.required(data-step='3')
+								.quiz-content.quiz-content_sidebar
+									.quiz-content__inner
+										.quiz-content__left
+											.quiz-left.quiz-left_main
+												.quiz-left__head Подберем новостройку под вас
+												.quiz-left__body
+													.quiz-left__number.g-text 03
+													.quiz-left__title.quiz-title Выберите стоимость вашей будущей квартиры
+													.quiz-left__several
+														span можно выбрать несколько
+												.quiz-left__foot
+													.quiz-left-progress
+										.quiz-content__right
+											.quiz-hint
+												.quiz-hint__icon
+													span ?
+												.quiz-hint__txt Выберите стоимость квартиры, которая соответствует вашим предпочтениям
+											.quiz-option
+												.quiz-option__top
+													.quiz-mobile-info
+														.quiz-mobile-info__txt
+															.quiz-hidden-txt
+																p
+																	| При покупке 2х и более квартир с целью их объединения рассматриваются индивидуальные условия продажи по сниженным ценам
+														.quiz-mobile-info__manager
+														button.quiz-mobile-info__btn
+															img(src='static/images/general/quiz/down.svg', alt='')
+													.quiz-option__img
+														img(src='static/images/general/quiz/option2.jpg', loading='lazy', alt='')
+												.quiz-option__bottom
+													.quiz-option-list.quiz-inputs.quiz-inputs_all
+														.quiz-option-list__item
+															label.quiz-option-item
+																input.quiz-option-item__input.quiz-input(type='checkbox', name='2')
+																span.quiz-option-item__checked
+																span.quiz-option-item__txt.quiz-input-txt до 3 000 000
+														.quiz-option-list__item
+															label.quiz-option-item
+																input.quiz-option-item__input.quiz-input(type='checkbox', name='2')
+																span.quiz-option-item__checked
+																span.quiz-option-item__txt.quiz-input-txt до 5 000 000
+														.quiz-option-list__item
+															label.quiz-option-item
+																input.quiz-option-item__input.quiz-input(type='checkbox', name='2')
+																span.quiz-option-item__checked
+																span.quiz-option-item__txt.quiz-input-txt до 6 000 000
+														.quiz-option-list__item
+															label.quiz-option-item
+																input.quiz-option-item__input.quiz-input(type='checkbox', name='2')
+																span.quiz-option-item__checked
+																span.quiz-option-item__txt.quiz-input-txt от 6 000 000
+														.quiz-option-list__item
+															label.quiz-option-item
+																input.quiz-option-item__input.quiz-input(type='checkbox', name='2')
+																span.quiz-option-item__checked.quiz-option-item__checked_enter
+																.quiz-option-item__enter
+																	input.quiz-option-item__enter-input(type='text', maxlength='80', placeholder='Другое')
+																	.quiz-option-item__enter-count
+																		span 0
+																		| / 80
+											.quiz-item__progress
+												.quiz-progress-mobile
+													.quiz-progress-mobile__steps
+														.quiz-progress-mobile__active 01
+														span /
+														.quiz-progress-mobile__count 04
+													.quiz-progress
+														span
+												.quiz-controls
+													button.quiz-controls__prev.quiz-controls__prev_small
+														svg(width='18', height='9', viewBox='0 0 18 9', fill='none', xmlns='http://www.w3.org/2000/svg')
+															path(d='M17 4.5H1.89374M4.9217 1L1.06875 4.34948C0.977086 4.42917 0.977086 4.57083 1.06875 4.65052L4.9217 8', stroke='url(#my-cool-gradient)', stroke-width='1.3', stroke-linecap='round')
+													button.quiz-controls__next.q-btn.quiz-controls__next-small
+														span Далее
+														img.icon-arrow(src='static/images/general/quiz/next.svg', alt='')
+							#step4.quiz-step.required(data-step='4')
+								.quiz-content.quiz-content_sidebar
+									.quiz-content__inner
+										.quiz-content__left
+											.quiz-left.quiz-left_main
+												.quiz-left__head Подберем новостройку под вас
+												.quiz-left__body
+													.quiz-left__number.g-text 04
+													.quiz-left__title.quiz-title Для каких целей вы планируете приобрести недвижимость?
+													.quiz-left__several
+														span можно выбрать несколько
+												.quiz-left__foot
+													.quiz-left-progress
+										.quiz-content__right
+											.quiz-hidden-txt
+												p
+													| Мы предоставляем возможность к приобретению жилья, которое подойдет под любые ваши цели, будь то проживание на удаленном от суетливой жизни месте, инвестирование в жилье, которое из года в год будет расти в цене, или же сдача
+											.quiz-hint
+												.quiz-hint__icon
+													span ?
+												.quiz-hint__txt Выберите цель приобретения, которая соответствует вашим предпочтениям
+											.quiz-mobile-info
+												.quiz-mobile-info__txt
+													.quiz-hidden-txt
+														p Наш жилой комплекс представляет собой семь 12-этажных зданий.
+														p Сдача первого дома – 4 квартал 2022 года
+												.quiz-mobile-info__manager
+												button.quiz-mobile-info__btn
+													img(src='static/images/general/quiz/down.svg', alt='')
+											.quiz-images.quiz-images_small
+												.quiz-images-list.quiz-inputs
+													.quiz-images-list__item.quiz-images-list__item_col-2
+														label.quiz-images-label
+															span.quiz-images-label__img
+																img(src='static/images/general/quiz/img1.png', alt='img')
+															span.quiz-images-label__info
+																input.quiz-images-label__radio.quiz-input(type='radio', name='img')
+																span.quiz-images-label__checked
+																span.quiz-images-label__txt.quiz-input-txt Проживание
+													.quiz-images-list__item.quiz-images-list__item_col-2
+														label.quiz-images-label
+															span.quiz-images-label__img
+																img(src='static/images/general/quiz/img2.png', alt='img')
+															span.quiz-images-label__info
+																input.quiz-images-label__radio.quiz-input(type='radio', name='img')
+																span.quiz-images-label__checked
+																span.quiz-images-label__txt.quiz-input-txt Сдача в аренду
+													.quiz-images-list__item.quiz-images-list__item_col-2
+														label.quiz-images-label
+															span.quiz-images-label__img
+																img(src='static/images/general/quiz/img3.png', alt='img')
+															span.quiz-images-label__info
+																input.quiz-images-label__radio.quiz-input(type='radio', name='img')
+																span.quiz-images-label__checked
+																span.quiz-images-label__txt.quiz-input-txt Инвестирование
+													.quiz-images-list__item.quiz-images-list__item_col-2
+														label.quiz-images-label
+															span.quiz-images-label__img
+																img(src='static/images/general/quiz/img4.png', alt='img')
+															span.quiz-images-label__info
+																input.quiz-images-label__radio.quiz-input(type='radio', name='img')
+																span.quiz-images-label__checked
+																span.quiz-images-label__txt.quiz-input-txt Другое
+											.quiz-item__progress
+												.quiz-progress-mobile
+													.quiz-progress-mobile__steps
+														.quiz-progress-mobile__active 01
+														span /
+														.quiz-progress-mobile__count 04
+													.quiz-progress
+														span
+												.quiz-controls
+													button.quiz-controls__prev.quiz-controls__prev_small
+														svg(width='18', height='9', viewBox='0 0 18 9', fill='none', xmlns='http://www.w3.org/2000/svg')
+															path(d='M17 4.5H1.89374M4.9217 1L1.06875 4.34948C0.977086 4.42917 0.977086 4.57083 1.06875 4.65052L4.9217 8', stroke='url(#my-cool-gradient)', stroke-width='1.3', stroke-linecap='round')
+													button.quiz-controls__next.q-btn.quiz-controls__next-small
+														span Далее
+														img.icon-arrow(src='static/images/general/quiz/next.svg', alt='')
+							#step5.quiz-step(data-step='5')
+								.quiz-content.quiz-content_sidebar
+									.quiz-content__inner
+										.quiz-content__left
+											.quiz-left
+												.quiz-left__head Подберем новостройку под вас
+												.quiz-left__body
+													.quiz-left__number.g-text Результаты
+													.quiz-left__title Для вас подобрано 15 вариантов жилья в Сочи
+												.quiz-left__foot
+													.quiz-left-progress
+														.quiz-left-progress__item.quiz-left-progress__item_active
+															.quiz-left-progress__number Последний этап
+															.quiz-left-progress__line
+										.quiz-content__right
+											.quiz-hint.quiz-hint_mobile-visible
+												.quiz-hint__icon
+													span ?
+												.quiz-hint__txt
+													| Забронируем скидку в 
+													span 100 000 ₽
+													|  за вашим номером телефона и отправим подборку в течение 2 часов
+											.quiz-finish__row
+												.quiz-finish__top
+													.quiz-finish-messenger
+														#tg.quiz-finish-messenger__item
+															img(src='static/images/general/quiz/tg.svg', alt='')
+															span Telegram
+														#wa.quiz-finish-messenger__item
+															img(src='static/images/general/quiz/wa.svg', alt='')
+															span WhatsApp
+														#vb.quiz-finish-messenger__item
+															img(src='static/images/general/quiz/vb.svg', alt='')
+															span Viber
+													.quiz-finish-tabs
+														button.quiz-finish-tabs__item.quiz-finish-tabs__item_selected(data-type='phone') Телефон
+														button.quiz-finish-tabs__item(data-type='login') Логин
+													form#form-quiz.quiz-form(action='form.php')
+														input.hidden-input(type='hidden', name='title', value='Заявка с квиза')
+														input.hidden-input(type='hidden', name='admin_email', value='info@jk-letniy.ru')
+														input.hidden-input(type='hidden', name='project_name', value='ЖК Летний')
+														input.hidden-input(type='hidden', name='form_subject', value='Форма в модальном окне квиза')
+														label.quiz-form__group.quiz-form__group_no-bg
+															span.quiz-form__label.quiz-form__label_small
+																span Ваше имя
+															input.quiz-form__input.quiz-form__input_border-bottom(type='text', name='name')
+														label#f-login.quiz-form__group.quiz-form__group_no-bg.quiz-form__group_hidden
+															span.quiz-form__label.quiz-form__label_small
+																span Ваш логин*
+															input.quiz-form__input.quiz-form__input_border-bottom(type='text', placeholder='@username', name='login')
+														label#f-phone.quiz-form__group.quiz-form__group_no-bg
+															span.quiz-form__label.quiz-form__label_small
+																span Ваш телефон*
+															input.quiz-form__input.quiz-form__input_border-bottom(type='phone', placeholder='8 (912) 345-67-89', name='phone', data-validate='', pattern='[+]7[(][0-9]{3}[)][0-9]{3}[-][0-9]{2}[-][0-9]{2}', minlength='16', maxlength='16', inputmode='numeric')
+														button.quiz-form__btn.q-btn(type='submit')
+															span Получить подборку
+															img.icon-arrow(src='static/images/general/quiz/next.svg', alt='')
+														.quiz-form__txt
+															| Нажимая кнопку, вы соглашаетесь 
+															a.g-text(href='/politics') политикой конфиденциальности
+												.quiz-finish__bottom
+													.quiz-social.quiz-social_bg
+														.quiz-social__txt Мы можем отправить вам подборку с помощью мессенджера
+														.quiz-social-list
+															.quiz-social-item
+																button.button-tg(value='Telegram')
+																	img(src='static/images/general/quiz/tg-icon.svg', alt='')
+															.quiz-social-item
+																button.button-wa(value='WhatsApp')
+																	img(src='static/images/general/quiz/wa-icon.svg', alt='')
+															.quiz-social-item
+																button.button-vb(value='Viber')
+																	img(src='static/images/general/quiz/vb-icon.svg', alt='')
+													button.quiz-finish__back
+														svg(width='18', height='9', viewBox='0 0 18 9', fill='none', xmlns='http://www.w3.org/2000/svg')
+															path(d='M17 4.5H1.89374M4.9217 1L1.06875 4.34948C0.977086 4.42917 0.977086 4.57083 1.06875 4.65052L4.9217 8', stroke='url(#my-cool-gradient)', stroke-width='1.3', stroke-linecap='round')
+														span Вернуться к вводу контактов
+						.quiz-item__aside
+							.quiz-aside
+								.quiz-discount
+									.quiz-discount__inner
+										.quiz-discount__txt Ваша скидка:
+										.quiz-discount__value
+											.quiz-discount__value-txt
+												span 0 
+												|  ₽
+											.quiz-discount__value-plus.floating
+												img(src='static/images/general/quiz/plus.svg', alt='plus')
+												img(src='static/images/general/quiz/plus.svg', alt='plus')
+								.quiz-aside-block
+									.quiz-manager.quiz-aside__manager
+										.quiz-manager__inner
+											.quiz-manager__photo
+												img(src='static/images/general/quiz/manager.png', alt='')
+											.quiz-manager__info
+												.quiz-manager__name Иван Стихин
+												.quiz-manager__position Ваш личный менеджер
+									.quiz-aside-desc
+								.receive.receive_column
+									button.receive__open
+									.receive-title
+										| После ответов на 
+										br
+										| вопросы, вы получите:
+									.receive-list
+										.receive-list__item
+											.receive-card.receive-card_gray.receive-card__lock
+												.receive-card__inner
+													.receive-card__img
+														img(src='static/images/general/quiz/receive.png', alt='')
+													.receive-card__txt Подборку квартир под бюджет и цели
+										.receive-list__item
+											.receive-card.receive-card_gray.receive-card__lock
+												.receive-card__inner
+													.receive-card__img
+														img(src='static/images/general/quiz/receive1.png', alt='')
+													.receive-card__txt Скидку 100 000₽ на покупку
+			.quiz-end
+				.quiz-thanks
+					.quiz-thanks__inner
+						.quiz-thanks__top
+							.quiz-thanks__img
+								img(src='static/images/general/quiz/thanks.svg', alt='')
+							.quiz-thanks__title Спасибо за ваши ответы!
+							.quiz-thanks__txt
+								| Спасибо, что уделили время и прошли опрос. В течение 2 часов мы вышлем подборку квартир и свяжемся с вами.
+						.quiz-thanks__bottom
+							.receive.receive_has-title
+								.receive-title
+									| За вами закреплены
+									br
+									|  следующие бонусы:
+								.receive-list
+									.receive-list__item
+										.receive-card.receive-card_gray
+											.receive-card__inner
+												.receive-card__img
+													img(src='static/images/general/quiz/receive.png', alt='')
+												.receive-card__txt Подборка квартир под бюджет и цели
+									.receive-list__item
+										.receive-card.receive-card_gray
+											.receive-card__inner
+												.receive-card__img
+													img(src='static/images/general/quiz/receive1.png', alt='')
+												.receive-card__txt Скидка 100 000₽ на покупку 

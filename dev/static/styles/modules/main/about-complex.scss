@@ -6,7 +6,7 @@
 	&__section-title {
 		position: absolute;
 		top: 0;
-		left: 15px;
+		left: 10px;
 	}
 	&__discription {
 		p {
@@ -76,7 +76,7 @@
 
 @media only screen and (max-width: 575px) {
 	.about-complex {
-		padding: 72px 0;
+		padding: 50px 0;
 		&__discription, &__location {
 			p {padding: 0}
 		}

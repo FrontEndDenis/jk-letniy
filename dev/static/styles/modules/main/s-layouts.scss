@@ -3,7 +3,7 @@
 	&__section-title {
 		position: absolute;
 		top: 0px;
-		left: 15px;
+		left: 10px;
 	}
 	&__slider {
 		display: none !important;
@@ -16,6 +16,7 @@
 			width: auto !important;
 			height: 100%;
 			margin: 0 auto;
+			transform: translateX(-10%);
 		}
 	}
 	&__image-svg {
@@ -50,5 +51,7 @@
 }
 
 @media only screen and (max-width: 575px) {
-	.s-layouts {padding: 50px 0}
+	.s-layouts {
+		padding: 50px 0;
+	}
 }

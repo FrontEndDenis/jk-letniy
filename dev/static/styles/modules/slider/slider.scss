@@ -52,6 +52,10 @@
 @media only screen and (max-width: 1199px) {
 	.owl-carousel {
 		button {
+			&.owl-next, &.owl-prev {
+				width: 30px;
+				height: 30px;
+			}
 			&.owl-next {right: 15px}
 			&.owl-prev {left: 15px}
 		}
@@ -60,12 +64,8 @@
 		&__slider {
 			&.owl-carousel {
 				button {
-					&.owl-next, &.owl-prev {
-						width: 30px;
-						height: 30px;
-					}
 					&.owl-next {right: 0px}
-					&.owl-prev {left: 0px}
+					&.owl-prev {left: -27px}
 				}
 			}
 		}

@@ -23,7 +23,6 @@
 <path d="M721.187 173.803L747.663 172.083L777.711 172.142L753.862 173.882L721.187 173.803Z" fill="url(#paint20_radial)"/>
 <path d="M753.862 173.863V242.352L747.663 242.292L721.168 242.015V298.223L636.135 296.779V241.145L518.527 239.939V179.381L588.969 10.2842L675.838 8.8207L609.107 173.526L636.135 173.606V118.348L721.168 118.011V173.803L753.862 173.863Z" fill="url(#paint21_linear)"/>
 <path d="M675.838 8.8207L609.127 173.526L636.155 173.606V118.348L721.187 118.011V173.803L753.862 173.882V242.352L721.187 242.015V298.203L636.155 296.779V241.125L518.527 239.919V179.361L588.95 10.2842L675.838 8.8207Z" stroke="url(#paint22_linear)" stroke-width="0.2659" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M747.663 242.727V275.083L721.602 242.47L747.663 242.727Z" fill="url(#paint23_linear)"/>
 </g>
 <defs>
 <radialGradient id="paint0_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(463.001 292.107) scale(463.059 25.8883)">
@@ -129,16 +128,6 @@
 <linearGradient id="paint22_linear" x1="518.265" y1="153.512" x2="754.115" y2="153.512" gradientUnits="userSpaceOnUse">
 <stop offset="0.00526316" stop-color="#F1F2F2"/>
 <stop offset="1" stop-color="#E6E7E8"/>
-</linearGradient>
-<linearGradient id="paint23_linear" x1="730.283" y1="236.379" x2="754.211" y2="270.491" gradientUnits="userSpaceOnUse">
-<stop stop-color="#939598"/>
-<stop offset="0.0449" stop-color="#A9ABAD"/>
-<stop offset="0.1133" stop-color="#C4C5C6"/>
-<stop offset="0.192" stop-color="#DADADB"/>
-<stop offset="0.284" stop-color="#EBEBEB"/>
-<stop offset="0.3976" stop-color="#F6F6F7"/>
-<stop offset="0.5572" stop-color="#FDFDFD"/>
-<stop offset="1" stop-color="white"/>
 </linearGradient>
 <clipPath id="clip0">
 <rect width="926" height="318" fill="white"/>

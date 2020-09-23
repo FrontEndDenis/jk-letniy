@@ -5,7 +5,7 @@
 	&__section-title {
 		position: absolute;
 		top: 0;
-		left: 15px;
+		left: 10px;
 	}
 }
 
@@ -28,6 +28,15 @@
 	.advantages-complex {
 		.col-xll-4 {
 			&:not(:last-child) {margin-bottom: 30px}
+		}
+	}
+}
+
+@media only screen and (max-width: 575px) {
+	.advantages-complex {
+		padding: 40px 0;
+		.col-xll-4 {
+			&:not(:last-child) {margin-bottom: 15px}
 		}
 	}
 }

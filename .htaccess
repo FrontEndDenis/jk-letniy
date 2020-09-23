@@ -4,11 +4,11 @@ RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
 
 #в случае index.php:
 RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.php\ HTTP/
-RewriteRule ^index\.php$ https://grand-royalsochi.ru/ [R=301,L]
+RewriteRule ^index\.php$ https://jk-letniy.ru/ [R=301,L]
 
 #в случае index.html:
 RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html\ HTTP/
-RewriteRule ^index\.html$ https://grand-royalsochi.ru/ [R=301,L]
+RewriteRule ^index\.html$ https://jk-letniy.ru/$1 [R=301,L]
 <ifModule mod_expires.c>
 
 # Add correct content-type for fonts & SVG
@@ -44,4 +44,4 @@ ExpiresByType application/xhtml+xml "access plus 600 seconds"
 AddOutputFilterByType DEFLATE text/html text/plain text/xml application/xml application/xhtml+xml text/css text/javascript application/javascript application/x-javascript application/font-woff2 image/svg+xml
 
 </ifModule>
-ErrorDocument 404 https://grand-royalsochi.ru/404.html
+ErrorDocument 404 https://jk-letniy.ru/404.html

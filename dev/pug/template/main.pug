@@ -1,27 +1,27 @@
 include ../utils/mixins
 block variables
 
-//- |<?php
-//- |class UniversalAnalyticsCookieParser{
-//- |    function __construct() {
-//- |        if( isset($_COOKIE["_ga"]) ){
-//- |            return $this->getCid();
-//- |        }
-//- |    }
-//- |    public function parseCookie()
-//- |    {
-//- |        list($version,$domainDepth, $cid1, $cid2) = preg_split('[\.]', $_COOKIE["_ga"],4);
-//- |        return array('version' => $version, 'domainDepth' => $domainDepth, 'cid' => $cid1.'.'.$cid2);
-//- |    }
-//- |    public function getCid()
-//- |    {
-//- |        $contents = $this->parseCookie();
-//- |        return $contents['cid'];
-//- |    }
-//- |}
-//- |
-//- |$UaParser = new UniversalAnalyticsCookieParser();
-//- |?>
+|<?php
+|class UniversalAnalyticsCookieParser{
+|    function __construct() {
+|        if( isset($_COOKIE["_ga"]) ){
+|            return $this->getCid();
+|        }
+|    }
+|    public function parseCookie()
+|    {
+|        list($version,$domainDepth, $cid1, $cid2) = preg_split('[\.]', $_COOKIE["_ga"],4);
+|        return array('version' => $version, 'domainDepth' => $domainDepth, 'cid' => $cid1.'.'.$cid2);
+|    }
+|    public function getCid()
+|    {
+|        $contents = $this->parseCookie();
+|        return $contents['cid'];
+|    }
+|}
+|
+|$UaParser = new UniversalAnalyticsCookieParser();
+|?>
 
 doctype html
 html(lang="ru-RU")
@@ -34,34 +34,43 @@ html(lang="ru-RU")
 		meta(name="viewport" content="width=device-width,initial-scale=1")
 		meta(name="keywords" content="")
 		meta(name="description" content=description)
-		link(href='https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap', rel='stylesheet')
 		link(rel="stylesheet" type='text/css' href="static/css/styles.min.css")
-		link( href="static/images/general/favicon.svg" rel="shortcut icon" type="image/svg")
-
+		link(href="static/images/general/favicon.svg" rel="shortcut icon" type="image/svg")
+		link(href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet")
 		<!--[if lt IE 9]>
-		script(src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js")
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js" defer)
 		<![endif]-->
-
-		//- script(async src="https://www.googletagmanager.com/gtag/js?id=UA-175175627-1")
-		//- script
-		//- 	include ../../seo/metrics.js
-
-		//- script(src="//script.marquiz.ru/v1.js")
-		//- script
-		//- 	include ../../seo/marquiz.js
-		//- noscript
-		//- 	iframe(src='https://www.googletagmanager.com/ns.html?id=GTM-5N65B9Z', height='0', width='0', style='display:none;visibility:hidden')
-		//- noscript
-		//- 	div
-		//- 		img(src='https://mc.yandex.ru/watch/66345070', style='position:absolute; left:-9999px;', alt='')
+		script(async src="https://www.googletagmanager.com/gtag/js?id=UA-178639922-1")
+		script
+			include ../../seo/metrics.js
+		noscript
+			iframe(src='https://www.googletagmanager.com/ns.html?id=GTM-TV3876H', height='0', width='0', style='display:none;visibility:hidden')
+		noscript
+			div
+				img(src='https://mc.yandex.ru/watch/67549219', style='position:absolute; left:-9999px;', alt='')
 	body
 		include ../section/header/header
+		include ../mobile-menu/mobile-menu
 		block content
 		include ../section/footer/footer
 		block modal
+		svg(style="width:0;height:0;position:absolute;" aria-hidden="true" focusable="false")
+			linearGradient(linearGradient id="my-cool-gradient" x2="1" y2="1")
+				stop(offset="0%" stop-color="#E2AE53")
+				stop(offset="100%" stop-color="#E1874D")
 		script(src="static/js/jquery-3.3.1.min.js")
 		script(src="static/js/libs.min.js")
+		script(src="static/js/qlibs.min.js")
 		script(src="static/js/main.js")
+		script(src="static/js/quiz.min.js")
 		script(src='https://api-maps.yandex.ru/2.1/?apikey=d5f354d9-0b87-4702-bc6b-201ec476b09a&lang=ru_RU', type='text/javascript')
 		script(src="static/js/map.js")
+		script(src='https://ga2.b24.macte.pro/b242ga.js')
+		script.
+			B242GAInit({
+				portal:'https://bvbrealty.bitrix24.ru/',
+				presets:{
+					'GA_COUNTER':'UA-178639922-1'
+				}
+			});
 		block script

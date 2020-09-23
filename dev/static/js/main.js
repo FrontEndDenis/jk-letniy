@@ -21,6 +21,8 @@ $(document).ready(function () {
 			0: {
 				items: 1,
 				dots: true,
+				navText: ['<svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.559514 5.4696L5.30281 0.726447C5.60454 0.424569 6.09375 0.424569 6.39533 0.726447C6.69694 1.02806 6.69694 1.51724 6.39533 1.81882L2.19825 6.01578L6.39521 10.2126C6.69682 10.5143 6.69682 11.0035 6.39521 11.3051C6.0936 11.6068 5.60442 11.6068 5.30269 11.3051L0.559392 6.56185C0.408587 6.41097 0.333271 6.21344 0.333271 6.01581C0.333271 5.81808 0.408734 5.6204 0.559514 5.4696Z"/></svg>', '<svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.44048 6.5304L1.69718 11.2736C1.39545 11.5754 0.906245 11.5754 0.604661 11.2736C0.303052 10.9719 0.303052 10.4828 0.604661 10.1812L4.80175 5.98422L0.604785 1.7874C0.303176 1.48567 0.303176 0.996535 0.604785 0.694926C0.906394 0.393195 1.39557 0.393195 1.6973 0.694926L6.4406 5.43815C6.5914 5.58903 6.66672 5.78656 6.66672 5.98419C6.66672 6.18192 6.59126 6.3796 6.44048 6.5304Z"/></svg>'],
+				
 			}
 		}
 	});
@@ -28,7 +30,7 @@ $(document).ready(function () {
 		loop: true,
 		nav: true,
 		smartSpeed: 1500,
-		dots: true,
+		dots: false,
 		navText: ['<svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.559514 5.4696L5.30281 0.726447C5.60454 0.424569 6.09375 0.424569 6.39533 0.726447C6.69694 1.02806 6.69694 1.51724 6.39533 1.81882L2.19825 6.01578L6.39521 10.2126C6.69682 10.5143 6.69682 11.0035 6.39521 11.3051C6.0936 11.6068 5.60442 11.6068 5.30269 11.3051L0.559392 6.56185C0.408587 6.41097 0.333271 6.21344 0.333271 6.01581C0.333271 5.81808 0.408734 5.6204 0.559514 5.4696Z"/></svg>', '<svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.44048 6.5304L1.69718 11.2736C1.39545 11.5754 0.906245 11.5754 0.604661 11.2736C0.303052 10.9719 0.303052 10.4828 0.604661 10.1812L4.80175 5.98422L0.604785 1.7874C0.303176 1.48567 0.303176 0.996535 0.604785 0.694926C0.906394 0.393195 1.39557 0.393195 1.6973 0.694926L6.4406 5.43815C6.5914 5.58903 6.66672 5.78656 6.66672 5.98419C6.66672 6.18192 6.59126 6.3796 6.44048 6.5304Z"/></svg>'],
 		responsive: {
 			0: {
@@ -36,56 +38,85 @@ $(document).ready(function () {
 			}
 		}
 	});
-});
-
-
-function isDevice() {
-	const isMobile = {
-		Android: function () {
-			return navigator.userAgent.match(/Android/i);
-		},
-		BlackBerry: function () {
-			return navigator.userAgent.match(/BlackBerry/i);
-		},
-		iOS: function () {
-			return navigator.userAgent.match(/iPhone|iPad|iPod/i);
-		},
-		Opera: function () {
-			return navigator.userAgent.match(/Opera Mini/i);
-		},
-		Windows: function () {
-			return navigator.userAgent.match(/IEMobile/i);
-		},
-		any: function () {
-			return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
-		}
-	}
-	if (isMobile.any()) {
-		return true;
-	} else {
-		return false;
-	}
-}
-
-function animationPhone() {
-	const t = document.querySelectorAll('.form-group label');
-	t.forEach(e => {
-		if (isDevice()) {
-			e.addEventListener('onclick', () => addClass(e));
-		} else {
-			e.addEventListener('mouseover', () => addClass(e));
-			e.addEventListener('mouseout', () => removeClass(e));
-		}
-		e.addEventListener('onblur', () => addClass(e));
+	// Открытие мобильного меню
+	$('.mobile-menu__overlay, .hamburger, .mobile-menu__body a').click(function () {
+		activeMenu();
 	});
-	const addClass = n => {
-		n.classList.add('active')
+
+	function activeMenu() {
+		$('.hamburger').toggleClass('open');
+		$('.mobile-menu').fadeToggle();
+		$('.mobile-menu').toggleClass('active');
+		$('body').toggleClass('scroll');
 	}
-	const removeClass = n => {
-		n.classList.remove('active')
+	// Маска телефона
+	$('input[type="tel"]').mask('0 (000) 000-00-00'), {autoclear: false};
+
+	// input анимация
+	$('.form-group input').focus(function () {
+		$(this).parents('.form-group label').addClass('active');
+	});
+	$('.form-group input').blur(function () {
+		var inputValue = $(this).val();
+		if (inputValue == "") {
+			$(this).parents('.form-group label').removeClass('filled');
+			$(this).parents('.form-group label').removeClass('active');
+		} else {
+			$(this).parents('.form-group label').addClass('filled');
+		}
+	});
+
+	//Валидация
+	(function() {
+		var $forms = $('.needs-validation');
+
+		$forms.submit(function(event) {
+			$(this).addClass('was-validated');
+			event.preventDefault();
+			event.stopPropagation();
+
+			if ($(this)[0].checkValidity() === false) {
+
+			} else {
+				ajax($(this));
+				$(this).find('[type=submit]').prop('disabled', true);
+			}
+		});
+	})();
+
+	function ajax(form) {
+		$.ajax({
+			type: "POST",
+			url: "form.php",
+			data: form.serialize()
+		})
+			.done(function () {
+				$(".modal").modal("hide");
+				setTimeout(() => $('#modal3').modal('show'), 300);
+				if (form.attr('id') === 'form-feedback') {
+					yaCounter67549219.reachGoal('otpravka_detali'); gtag('event', 'detali', { 'event_category': 'otpravform_detali', 'event_action': 'click' }); gtag('event', 'page_view', { 'page_path': '/otpavka-detali-form' });
+				}
+				if (form.attr('id') === 'form-footer') {
+					yaCounter67549219.reachGoal('otpravka_voprosy'); gtag('event', 'voprosy', { 'event_category': 'otpravform_voprosy', 'event_action': 'click' }); gtag('event', 'page_view', { 'page_path': '/otpavka-voprosy-form' });
+				}
+				if (form.attr('id') === 'form-modal-plan') {
+					yaCounter67549219.reachGoal('otpravka_stoimost'); gtag('event', 'zapros', { 'event_category': 'otpravit_stoimost', 'event_action': 'click' }); gtag('event', 'page_view', { 'page_path': '/otpavka-stoimost-form' });
+				}
+				if (form.attr('id') === 'form-modal-feedback') {
+					yaCounter67549219.reachGoal('otpravka_zayavka'); gtag('event', 'zayavka', { 'event_category': 'otpravit_zayavka', 'event_action': 'click' }); gtag('event', 'page_view', { 'page_path': '/otpavka-zayavka-form' });
+				}
+				form.trigger("reset");
+			})
+			.fail(function (jqXHR, textStatus) {
+				console.error(textStatus);
+			})
+			.always(function () {
+				setTimeout(function () {
+					form.find('[type=submit]').prop('disabled', false);
+				}, 600);
+			});
 	}
-}
-animationPhone();
+});
 
 function scrollHeader() {
 	const header = document.querySelector('.header');
@@ -106,16 +137,6 @@ function scrollHeader() {
 	});
 }
 scrollHeader();
-
-function animageHamburger() {
-	const hamb = document.querySelector('.header__hamburger .hamburger');
-
-	hamb.addEventListener('click', () => {
-		hamb.classList.contains('open') ? hamb.classList.remove('open') : hamb.classList.add('open')
-	})
-
-}
-animageHamburger();
 
 // Аккардион
 function accardionAnimation() {
@@ -299,9 +320,9 @@ function layoutsInfo() {
 		document.querySelector('#area').textContent = area;
 		document.querySelector('#living-area').textContent = livingArea;
 		document.querySelector('#room').innerHTML = 'Площадь комнаты:' + '<span>' + roomArea + '</span>';
-		document.querySelector('#kitchen').innerHTML = 'Площадь комнаты:' + '<span>' + kitchenArea + '</span>';
-		document.querySelector('#wc').innerHTML = 'Площадь комнаты:' + '<span>' + wcArea + '</span>';
-		document.querySelector('#ceiling').innerHTML = 'Площадь комнаты:' + '<span>' + ceilingHeight + '</span>';
+		document.querySelector('#kitchen').innerHTML = 'Площадь кухни:' + '<span>' + kitchenArea + '</span>';
+		document.querySelector('#wc').innerHTML = 'Площадь санузлов:' + '<span>' + wcArea + '</span>';
+		document.querySelector('#ceiling').innerHTML = 'Высота потолков:' + '<span>' + ceilingHeight + '</span>';
 		document.querySelector('#img').setAttribute('src', img);
 		openModal(modal);
 	}
@@ -311,40 +332,3 @@ function openModal(el) {
 	$(el).modal();
 }
 layoutsInfo();
-
-
-// function ajax(form) {
-// 	$.ajax({
-// 		type: "POST",
-// 		url: "form.php",
-// 		data: form.serialize()
-// 	})
-// 		.done(function () {
-// 			$(".modal").modal("hide");
-
-// 			setTimeout(() => $('#modal-application').modal('show'), 100);
-
-// 			if (form.attr('id') === 'form-callback') {
-// 				yaCounter66345070.reachGoal('otpravka_zvonok'); gtag('event', 'zvonok', { 'event_category': 'otpravit_zvonok', 'event_action': 'click' }); gtag('event', 'page_view', { 'page_path': '/otpavka-zvonok-form' });
-// 			}
-// 			if (form.attr('id') === 'form-price') {
-// 				yaCounter66345070.reachGoal('otpravka_stoimost'); gtag('event', 'zapros', { 'event_category': 'otpravit_stoimost', 'event_action': 'click' }); gtag('event', 'page_view', { 'page_path': '/otpavka-stoimost-form' });
-// 			}
-// 			if (form.attr('id') === 'form-plan') {
-// 				yaCounter66345070.reachGoal('planirovka _otpravka'); gtag('event', 'planirovka', { 'event_category': 'otpravit_planirovka', 'event_action': 'click' }); gtag('event', 'page_view', { 'page_path': '/otpavka-planirovka-form' });
-// 			}
-// 			if (form.attr('id') === 'form-consultation') {
-// 				yaCounter66345070.reachGoal('otpravka_voprosy'); gtag('event', 'voprosy', { 'event_category': 'otpravform_voprosy', 'event_action': 'click' }); gtag('event', 'page_view', { 'page_path': '/otpavka-voprosy-form' });
-// 			}
-
-// 			form.trigger("reset");
-// 		})
-// 		.fail(function (jqXHR, textStatus) {
-// 			console.error(textStatus);
-// 		})
-// 		.always(function () {
-// 			setTimeout(function () {
-// 				form.find('[type=submit]').prop('disabled', false);
-// 			}, 600);
-// 		});
-// }

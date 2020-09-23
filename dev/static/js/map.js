@@ -300,14 +300,6 @@ ymaps.ready(function () {
 		ctrl = false;
 	});
 
-	// myMap.controls.events.add('fullscreenenter', function (evt) {
-	// 	myMap.behaviors.enable('scrollZoom');
-	// });
-
-	// myMap.controls.events.add('fullscreenexit', function (evt) {
-	// 	myMap.behaviors.disable('scrollZoom');
-	// });
-
 	// Открытие балуна
 	myMap.events.add('click', function() {
 		if (myMap.balloon.isOpen()) {
@@ -323,32 +315,30 @@ ymaps.ready(function () {
 	fourCollection.add(myPlacemark12).add(myPlacemark13).add(myPlacemark14);
 
 	$('.s-map__places-map button').on('click', function() {
-		$('.s-map__places-map button').removeClass('active');
-		$(this).addClass('active');
-		addPie(this.dataset.value);
+		if(!$(this).hasClass('active')) {
+			$(this).addClass('active');
+			addPie(this.dataset.value, true);
+		} else {
+			$(this).removeClass('active');
+			addPie(this.dataset.value, false);
+		}
 	});
 
 	$('.s-map__places-map button').first().click();
 
-	function addPie(str) {
+	function addPie(str, act) {
 		let obj = {one: 1, two: 1, three: 1, four: 1};
-
-		if (str === 'all') {
-		obj = Object.keys(obj);
-			for (let i = 0; i < obj.length; i++) {
-				myMap.geoObjects.add(eval(`${obj[i]}Collection`));
-			}
-			return;
-		}
 
 		if (obj[str]) {
 			delete obj[str];
 			obj = Object.keys(obj);
+	
+			if (act) {
+				myMap.geoObjects.add(eval(`${str}Collection`));
+			} else {
+				myMap.geoObjects.remove(eval(`${str}Collection`));
 
-			for (let i = 0; i < obj.length; i++) {
-				myMap.geoObjects.remove(eval(`${obj[i]}Collection`));
 			}
-			myMap.geoObjects.add(eval(`${str}Collection`));
 		}
 	}
 });

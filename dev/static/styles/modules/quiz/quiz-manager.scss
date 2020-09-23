@@ -1,0 +1,33 @@
+.quiz {
+    &-manager {
+        &__inner {
+            display: flex;
+            align-items: center;
+        }
+        &__photo {
+            flex: 0 0 50px;
+            max-width: 50px;
+            img {
+                max-width: 100%;
+                border-radius: 50%;
+            }
+        }
+        &__info {
+            flex: 0 0 calc(100% - 50px);
+            max-width: calc(100% - 50px);
+            padding-left: 14px;
+        }
+        &__name {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 20px;
+            color: $gray;
+            margin-bottom: 4px;
+        }
+        &__position {
+            font-size: 12px;
+            line-height: 12px;
+            color: $wgray;
+        }
+    }
+}

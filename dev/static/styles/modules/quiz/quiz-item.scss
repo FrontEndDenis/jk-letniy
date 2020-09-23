@@ -1,0 +1,84 @@
+.quiz {
+    &-item {
+        &__inner {
+            display: grid;
+            grid-template-columns: 825px 261px;
+            grid-template-rows: 502px 124px;
+            grid-column-gap: 24px;
+            grid-row-gap: 24px;
+            &_no-foot {
+                grid-template-columns: 830px 260px;
+                grid-template-rows: 630px;
+                grid-column-gap: 20px;
+                grid-row-gap: 0px;
+            }
+            &_no-aside {
+                display: block;
+                height: 630px;
+            }
+        }
+        &__content {
+            grid-area: 1 / 1 / 2 / 2;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        &__aside {
+            grid-area: 1 / 2 / 2 / 3;
+        }
+        &__foot {
+            grid-area: 2 / 1 / 3 / 3;
+        }
+        &__title {
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 30px;
+            color: $gray;
+            margin-bottom: 10px;
+        }
+        &__subtitle {
+            font-size: 14px;
+            line-height: 17px;
+            color: $wgray;
+            margin-bottom: 24px;
+        }
+        &__tags {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 36px;
+        }
+        &__miss {
+            border: 1px solid $orange;
+            border-radius: 50px;
+            font-size: 10px;
+            line-height: 14px;
+            color: $wgray;
+            padding: 6px 20px;
+            display: inline-block;
+            
+            align-self: start;
+            margin-right: 12px;
+        }
+        &__plenty {
+            border: 1px solid $orange;
+            border-radius: 50px;
+            font-size: 10px;
+            line-height: 14px;
+            color: $wgray;
+            padding: 6px 20px;
+            display: inline-block;
+            
+            align-self: start;
+            margin-right: 12px;
+        }
+        &__progress {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: auto;
+            &_mobile {
+                display: none;
+            }
+        }
+    }
+}

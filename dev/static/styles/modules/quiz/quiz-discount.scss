@@ -1,0 +1,40 @@
+.quiz {
+    &-discount {
+        background: $gradient2;
+        border-radius: 10px;
+        padding: 3px;
+        color: $white;
+        margin-bottom: 24px;
+        &__inner {
+            border-radius: inherit;
+            background: $gradient1;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 19px 12px;
+        }
+        &__txt {
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 17px;
+        }
+        &__value {
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 20px;
+            display: flex;
+            align-items: flex-start;
+            &-plus {
+                position: relative;
+                top: -8px;
+                display: block;
+                &_hidden {
+                    display: none;
+                }
+                img {
+                    margin-left: 2px;
+                }
+            }
+        }
+    }
+}

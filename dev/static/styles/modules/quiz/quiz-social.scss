@@ -1,0 +1,104 @@
+.quiz-social {
+    background: rgba(239, 239, 239, 0.25);
+    border-radius: 5px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &_bg {
+        background: rgba(245, 244, 240, 0.8);
+    }
+    &_hidden {
+        display: none;
+    }
+    &__txt {
+        font-size: 14px;
+        line-height: 20px;
+        color: #959BA4;
+        margin-bottom: 0px;
+        font-weight: 500;
+        flex: 0 0 calc(100% - 144px);
+        max-width: calc(100% - 144px);
+    }
+    &-list {
+        display: flex;
+        justify-content: center;
+        flex: 0 0 144px;
+        max-width: 144px;
+    }
+    &-item {
+        margin-left: 6px;
+        margin-right: 6px;
+        button {
+            width: 40px;
+            height: 40px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            transition: all 200ms;
+            .icon-tg {
+                width: 20px;
+                height: 17px;
+                fill: #fff;
+            }
+            .icon-wa {
+                width: 24px;
+                height: 24px;
+                fill: #fff;
+            }
+            .icon-vb {
+                width: 24px;
+                height: 26px;
+                fill: #fff;
+            }
+        }
+    }
+    .button-tg {
+        background: rgba(50, 164, 224, 0.6);
+        box-shadow: inset 0px 3px 8px rgba(0, 0, 0, 0.1);
+        &:hover {
+            background: rgba(50, 164, 224, 0.9);
+            box-shadow: inset 0px 3px 8px rgba(0, 0, 0, 0.15);
+        }
+        &:active {
+            background: #32A4E0;
+            box-shadow: 0px 2px 12px rgba(50, 164, 224, 0.45), inset 0px -4px 12px rgba(0, 0, 0, 0.1);
+        }
+        &_selected {
+            background: #32A4E0;
+            box-shadow: 0px 2px 12px rgba(50, 164, 224, 0.45), inset 0px -4px 12px rgba(0, 0, 0, 0.1);
+        }
+    }
+    .button-wa {
+        background: rgba(145, 214, 116, 0.6);
+        box-shadow: inset 0px 3px 8px rgba(0, 0, 0, 0.1);
+        &:hover {
+            background: rgba(145, 214, 116, 0.9);
+            box-shadow: inset 0px 3px 8px rgba(0, 0, 0, 0.1);
+        }
+        &:active {
+            background: #91D674;
+            box-shadow: 0px 2px 12px rgba(145, 214, 116, 0.45), inset 0px -4px 12px rgba(0, 0, 0, 0.1);
+        }
+        &_selected {
+            background: #91D674;
+            box-shadow: 0px 2px 12px rgba(145, 214, 116, 0.45), inset 0px -4px 12px rgba(0, 0, 0, 0.1);
+        }       
+    }
+    .button-vb {
+        background: rgba(123, 81, 157, 0.6);
+        box-shadow: inset 0px 3px 8px rgba(0, 0, 0, 0.1);
+        &:hover {
+            background: rgba(123, 81, 157, 0.9);
+            box-shadow: inset 0px 3px 8px rgba(0, 0, 0, 0.1);
+        }
+        &:active {
+            background: #7B519D;
+            box-shadow: 0px 2px 12px rgba(123, 81, 157, 0.45), inset 0px -4px 12px rgba(0, 0, 0, 0.1);
+        }
+        &_selected {
+            background: #7B519D;
+            box-shadow: 0px 2px 12px rgba(123, 81, 157, 0.45), inset 0px -4px 12px rgba(0, 0, 0, 0.1);
+        }
+    }
+}

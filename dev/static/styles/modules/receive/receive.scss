@@ -1,0 +1,269 @@
+.receive {
+    &_has-title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &_column {
+        display: flex;
+        flex-direction: column;
+        .receive-title {
+            font-size: 16px;
+            line-height: 22px;
+            margin-bottom: 12px;
+        }
+        .receive-list {
+            &__item {
+                flex: 0 0 100%;
+                max-width: 100%;
+                margin-bottom: 12px;
+                margin-right: 0;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+        .receive-card {
+            &__inner {
+                padding: 16px 8px 16px 12px;
+            }
+            &__img {
+                flex: 0 0 52px;
+                max-width: 52px;
+                height: 52px;
+            }
+            &__txt {
+                flex: 0 0 calc(100% - 52px);
+                max-width: calc(100% - 52px);
+                padding-left: 6px;
+            }
+        }
+    }
+    &__open {
+        width: 30px;
+        height: 36px;
+        border-radius: 5px 0 0 5px;
+        background: $gradient1;
+        position: absolute;
+        top: 0;
+        left: -30px;
+        border: none;
+        padding: 0px;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        &::before {
+            content: url(../../static/images/general/quiz/prize.svg);
+        }
+        &_active {
+            &::before {
+                content: url(../../static/images/general/quiz/close.svg);
+            }
+        }
+    }
+    &-title {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 25px;
+        color: $gray;
+        max-width: 190px;
+    }
+    &-list {
+        display: flex;
+        flex-wrap: wrap;
+        &__item {
+            flex: 0 0 260px;
+            max-width: 260px;
+            margin-right: 16px;
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+    &-card {
+        
+        position: relative;
+        &_gray {
+            .receive-card__inner {
+                background: $wgray-bg;
+            }
+            
+        }
+        &__inner {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            padding: 8px;
+            border-radius: 10px;
+            background: $white-bg;
+            overflow: hidden;
+            position: relative;
+            &::before {
+                content: "";
+                width: 104px;
+                height: 104px;
+                background: $gradient1;
+                position: absolute;
+                left: -40px;
+                bottom: -50px;
+                border-radius: 50%;
+            }
+        }
+        &__lock {
+            cursor: not-allowed;
+            &::after {
+                content: "";
+                width: 29px;
+                height: 29px;
+                border-radius: 50%;
+                box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.15);
+                background: #fff url(../../static/images/general/quiz/lock.png) center no-repeat;
+                position: absolute;
+                top: -14px;
+                right: -14px;
+            }
+        }
+        
+        &__img {
+            flex: 0 0 68px;
+            max-width: 68px;
+            height: 68px;
+            position: relative;
+            z-index: 3;
+        }
+        &__txt {
+            flex: 0 0 calc(100% - 68px);
+            max-width: calc(100% - 68px);
+            padding-left: 8px;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 17px;
+            color: $gray;
+            position: relative;
+            z-index: 3;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .receive {
+        position: fixed;
+        top: 265px;
+        right: -170px;
+        z-index: 99;
+        transition: all 200ms ease-in-out;
+        &__open {
+            display: block;
+        }
+        &_opened {
+            right: 0;
+        }
+        &_last {
+            position: initial;
+            margin-bottom: 32px;
+            .receive-list {
+                padding: 0;
+                max-width: initial;
+                margin-left: -4px;
+                margin-right: -4px;
+                background: none;
+                box-shadow: none;
+                &__item {
+                    flex: 0 0 50%;
+                    max-width: 50%;
+                    padding-left: 4px;
+                    padding-right: 4px;
+                    margin: 0;
+                }
+            }
+            .receive-card__inner {
+                background: #F5F4F0;
+            }
+            .receive-title {
+                display: block;
+            }
+        }
+        &_column {
+            .receive-card__img {
+                flex: 0 0 54px;
+                max-width: 54px;
+                height: 54px;
+            }
+            .receive-list__item {
+                margin-bottom: 8px;
+            }
+    
+            .receive-card__inner {
+                padding: 8px 4px;
+                background: #F5F4F0;
+            }
+            .receive-card__txt {
+                flex: 100%;
+                max-width: 100%;
+            }
+        }
+        &-title {
+            display: none;
+        }
+        &-list {
+            background: rgba(231, 228, 217, 0.8);
+            box-shadow: inset 0px -3px 8px rgba(146, 146, 146, 0.1);
+            border-radius: 0px 0px 0px 5px;
+            padding: 15px 15px;
+            max-width: 170px;
+        }
+        &-card {
+            height: 72px;
+            &__img {
+                flex: 0 0 54px;
+                max-width: 54px;
+                height: 54px;
+                position: absolute;
+                top: 12px;
+                right: 6px;
+            }
+            &__lock {
+                &::after {
+                    width: 18px;
+                    height: 18px;
+                    background-size: 12px;
+                    top: -6px;
+                    right: -6px;
+                    z-index: 9;
+                }
+            }
+            &__inner {
+                padding: 10px;
+                height: 100%;
+                align-items: flex-start;
+                &::before {
+                    width: 101px;
+                    height: 101px;
+                    top: 30px;
+                    left: initial;
+                    right: -36px;
+                }
+                &::after {
+                    content: "";
+                    background: #F5F4F0;
+                    opacity: 0.7;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    z-index: 3;
+                }
+            }
+            &__txt {
+                font-size: 12px;
+                line-height: 15px;
+                flex: 0 0 100%;
+                max-width: 100%;
+                padding-left: 0px;
+                position: relative;
+                z-index: 9;
+            }
+        }
+    }
+}

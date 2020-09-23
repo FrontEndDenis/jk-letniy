@@ -6,16 +6,30 @@
 					+icon('close')
 				.modal-feedback__titel.s-title-36 Оставьте номер, наш менеджер перезвонит и ответит на все вопросы
 				.modal-feedback__forms
-					form.needs-validation(action='', novalidate)
+					form#form-modal-feedback.needs-validation(action='form.php', method='POST', novalidate)
+						<input type="hidden" name="utm_campaign" value="<?php echo isset($_GET['utm_campaign']) ? $_GET['utm_campaign'] : '' ;?>" />
+						<input type="hidden" name="utm_content" value="<?php echo isset($_GET['utm_content']) ? $_GET['utm_content'] : '' ;?>" />
+						<input type="hidden" name="utm_medium" value="<?php echo isset($_GET['utm_medium']) ? $_GET['utm_medium'] : '' ;?>" />
+						<input type="hidden" name="utm_source" value="<?php echo isset($_GET['utm_source']) ? $_GET['utm_source'] : '' ;?>" />
+						<input type="hidden" name="utm_term" value="<?php echo isset($_GET['utm_content']) ? $_GET['utm_term'] : '' ;?>" />
+						<input type="hidden" name="UF_CRM_GA_CID" value="<?php echo $UaParser->getCid(); ?>" />
+						<input class="hidden-input" type="hidden" name="title" value="Обратный звонок">
+						<input class="hidden-input" type="hidden" name="admin_email" value="info@jk-letniy.ru">
+						<input class="hidden-input" type="hidden" name="project_name" value="ЖК Летний">
+						<input class="hidden-input" type="hidden" name="form_subject" value="Форма в модальном окне обратного звонка">
 						.form-group
 							label
-								input.form-control(type='input', placeholder='Имя')
+								input.form-control(type='input', name='name', placeholder='Имя')
 								span Ваше имя
 						.form-group
 							label
-								input.form-control(type='tel', pattern="\+7\s\(\d{3}\)\s\d{3}-\d{2}-\d{2}", minlength='18', required, placeholder='+7 (___) ___-__-__')
+								input.form-control(type='tel', name='phone', pattern='[7-8]\\s\\(\\d{3}\\)\\s\\d{3}-\\d{2}-\\d{2}', minlength='17', required, placeholder='+7 (___) ___-__-__')
 								span Ваш телефон
+								.form-group__icon-phone
+									+icon('phone-2')
 						button.c-btn(type='submit') Узнать стоимость
-						.policy Нажимая на кнопку, вы даете согласие на обработку персональных данных
+						.policy
+							| Нажимая на кнопку, вы даете согласие на 
+							a.clr-1(href='https://jk-letniy.ru/policy.html' target='_blank') обработку персональных данных
 				.modal-feedback__image
 					img(src='../../../static/images/general/logo-modal.svg', alt='')

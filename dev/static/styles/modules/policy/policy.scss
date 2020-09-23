@@ -1,0 +1,48 @@
+.p-policy {
+	padding: 45px 0px;
+	line-height: 150%;
+	&__logo {margin-bottom: 70px}
+	h1, h2 {
+		margin-bottom: 36px;
+		font-size: 32px;
+		font-weight: 500;
+		line-height: 140%;
+		letter-spacing: 0.06em
+	}
+	p {margin-bottom: 36px}
+	ol {
+		margin-bottom: 36px;
+		padding-left: 24px;
+		li {margin-bottom: 24px;}
+	}
+	a {
+		color: $accent;
+		&:hover {color: $accent2}
+		&:active {color: $accent3}
+	}
+}
+
+@media only screen and (max-width: 1199px) {
+	.p-policy {
+		font-size: 18px;
+		h1, h2 {
+			font-size: 24px;
+		}
+	}
+}
+
+@media only screen and (max-width: 575px) {
+	.p-policy {
+		font-size: 16px;
+		&__logo {margin-bottom: 40px}
+		h1, h2 {
+			margin-bottom: 24px;
+			font-size: 20px;
+		}
+		p {margin-bottom: 24px}
+		ol {
+			margin-bottom: 24px;
+			li {margin-bottom: 12px;}
+		}
+	}
+}

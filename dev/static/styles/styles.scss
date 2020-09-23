@@ -19,9 +19,12 @@ body {
 	text-rendering: optimizeSpeed;
 	line-height: 140%;
 	letter-spacing: 0.04em;
-	font-family: Montserrat, Roboto, 'Open Sans', sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Cantarell, 'Helvetica Neue';
+	font-family: 'Montserrat', Roboto, 'Open Sans', sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Cantarell, 'Helvetica Neue';
 	overflow-x: hidden;
 	h1, h2, h3, h4, h5, h6 {margin: 0}
+	&.scroll {
+		overflow-y: hidden;
+	}
 }
 
 ul[class],
@@ -97,15 +100,15 @@ a {
 	}
 }
 
-// .wrapper {
-// 	display: flex;
-// 	flex-direction: column;
-// 	height: 100%;
-// }
-
-// .content {flex: 1 0 auto}
-
 svg {transition: .3s linear}
+
+
+@media only screen and (max-width: 575px) {
+	body {
+		font-family: Roboto, 'Open Sans', sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Cantarell, 'Helvetica Neue';
+		letter-spacing: 0em;
+	}
+}
 
 //Модули
 @import "modules/modules";

@@ -1,0 +1,52 @@
+.quiz {
+    &-hint {
+        display: flex;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 17px;
+        color: $gray;
+        margin-bottom: 36px;
+        &__txt {
+            span {
+                font-weight: 600;
+            }
+        }
+        &__icon {
+            width: 16px;
+            height: 16px;
+            min-width: 16px;
+            border-radius: 50%;
+            background: $gradient1;
+            position: relative;
+            padding: 1px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 18px;
+            &::before {
+                content: "";
+                border-radius: inherit;
+                position: absolute;
+                top: 1px;
+                left: 1px;
+                bottom: 1px;
+                right: 1px;
+                background: $white-bg;
+            }
+            .icon-question {
+                width: 4px;
+                height: 8px;
+                fill: url(#my-cool-gradient);
+                position: relative;
+            }
+            span {
+                font-size: 12px;
+                background: $gradient1;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                position: relative;
+                z-index: 3;
+            }
+        }
+    }
+}

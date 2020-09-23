@@ -2,6 +2,9 @@
 	&--wdh1400 {
 		max-width: 1400px;
 	}
+	&--wdh500 {
+		max-width: 500px;
+	}
 }
 
 .modal-content {
@@ -145,6 +148,17 @@
 	}
 }
 
+.modal-thanks {
+	position: relative;
+	padding: 40px;
+	&__close {
+		position: absolute;
+		top: 20px;
+		right: 40px;
+	}
+	&__titel {margin-bottom: 24px}
+}
+
 @media only screen and (max-width: 1199px) {
 	.modal-plan {
 		&__img {
@@ -254,5 +268,15 @@
 		}
 		&__image {display: none}
 		&::after {display: none}
+	}
+
+	.modal-thanks {
+		padding: 30px 15px;
+		&__close {
+			right: 15px;
+		}
+		&__titel {
+			margin-bottom: 12px;
+		}
 	}
 }

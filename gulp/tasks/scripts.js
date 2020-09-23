@@ -12,6 +12,7 @@ module.exports = function () {
                 'node_modules/svg4everybody/dist/svg4everybody.min.js',
                 'node_modules/bootstrap/dist/js/bootstrap.min.js',
                 'node_modules/owl.carousel/dist/owl.carousel.min.js',
+                'node_modules/jquery-mask-plugin/dist/jquery.mask.min.js',
             ])
             .pipe(concat('libs.min.js'))
             .pipe($.gulp.dest(scriptsPATH.output));
@@ -22,6 +23,7 @@ module.exports = function () {
                 'node_modules/svg4everybody/dist/svg4everybody.min.js',
                 'node_modules/bootstrap/dist/js/bootstrap.min.js',
                 'node_modules/owl.carousel/dist/owl.carousel.min.js',
+                'node_modules/jquery-mask-plugin/dist/jquery.mask.min.js',
             ])
             .pipe(concat('libs.min.js'))
             .pipe(uglify())
@@ -55,7 +57,7 @@ module.exports = function () {
 
         return $.gulp.src([
             scriptsPATH.input + 'main.js',
-            scriptsPATH.input + 'map.js'
+            scriptsPATH.input + 'map.js',
         ])
             .pipe(babel({
                 presets: ['@babel/env', 'minify']

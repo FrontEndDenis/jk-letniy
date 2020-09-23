@@ -1,0 +1,168 @@
+.first-step {
+    display: flex;
+    flex-wrap: wrap;
+    &_img-bottom {
+        flex-direction: column;
+        background: $white-bg;
+    }
+    &__btn {
+        padding: 12px 34px;
+        box-shadow: $shadowBtn;
+    }
+    &_img-right {
+
+    }
+    &_img-full {
+
+    }
+    &__inner {
+        width: 100%;
+        min-height: 502px;
+        height: 100%;
+        position: relative;
+        &-img {
+            margin-bottom: 28px;
+            height: 466px;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 15px;
+            }
+        }
+    }
+    &__title {
+        font-weight: bold;
+        font-size: 28px;
+        line-height: 35px;
+        margin-bottom: 16px;
+    }
+    &__subtitle {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 20px;
+        color: $wgray;
+    }
+    &__info {
+        &_top {
+            padding-top: 97px;
+            padding-bottom: 41px;
+            padding-left: 15px;
+            padding-right: 15px;
+            .first-step__title {
+                text-align: center;
+            }
+            .first-step__subtitle {
+                text-align: center;
+                margin-bottom: 36px;
+            }
+            .q-btn {
+                margin-left: auto;
+                margin-right: auto;
+                display: block;
+            }
+        }
+        &_left {
+            flex: 0 0 calc(100% - 615px);
+            max-width: calc(100% - 615px);
+            padding-top: 94px;
+            padding-left: 80px;
+            padding-right: 80px;
+            position: relative;
+            background: $white-bg;
+            border-radius: 15px 0 0 15px;
+            overflow: hidden;
+            &::before {
+                content: "";
+                width: 235px;
+                height: 235px;
+                position: absolute;
+                left: -90px;
+                bottom: -100px;
+                border-radius: 50%;
+                background: $gradient1;
+            }
+            .first-step__subtitle {
+                margin-bottom: 40px;
+            }
+        }
+        &_full {
+            width: 100%;
+            height: 100%;
+            min-height: 502px;
+            position: relative;
+            z-index: 3;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            .first-step__title {
+                color: $white;
+                max-width: 560px;
+                text-align: center;
+            }
+            .first-step__subtitle {
+                color: $white;
+                max-width: 560px;
+                text-align: center;
+                margin-bottom: 14px;
+            }
+        }
+    }
+    &__img {
+        &_bottom {
+            height: 335px;
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-end;
+            padding: 24px;
+            > img {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        &_right {
+            flex: 0 0 615px;
+            max-width: 615px;
+            img {
+                border-radius: 0 15px 15px 0;
+            }
+        }
+        &_full {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            border-radius: 15px;
+            &::before {
+                content: "";
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background: linear-gradient(0deg, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25));
+            }
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+    &__foot {
+        background: $white-bg;
+        border-radius: 15px;
+        margin-top: 24px;
+        width: 100%;
+        padding: 20px;
+    }
+}
+

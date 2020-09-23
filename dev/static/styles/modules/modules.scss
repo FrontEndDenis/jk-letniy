@@ -17,12 +17,39 @@
 @import "main/s-location";
 @import "main/s-map";
 @import "main/s-document";
+// Мобильное меню
+@import "mobile-menu/mobile-menu";
 // Слайдер
 @import "slider/slider";
 // Карточки
 @import "cards/about-card";
 @import "cards/advantages-card";
-//404
+// 404
 @import "404/404";
+// Политика конфиденциальности
+@import "policy/policy";
 // Модальные окна
 @import "modal/modal";
+
+// Квиз
+@import 'animation/animation';
+@import 'quiz/quiz';
+@import 'quiz/first-step';
+@import "quiz/quiz-item";
+@import "quiz/quiz-discount";
+@import "quiz/quiz-manager";
+@import "quiz/quiz-aside";
+@import "quiz/quiz-left";
+@import "quiz/quiz-hint";
+@import "quiz/quiz-content";
+@import "quiz/quiz-images-label";
+@import "quiz/quiz-images";
+@import "quiz/quiz-controls";
+@import 'receive/receive';
+@import 'quiz/quiz-option';
+@import 'quiz/quiz-range';
+@import 'quiz/quiz-finish';
+@import 'quiz/quiz-form';
+@import 'quiz/quiz-social';
+@import 'quiz/quiz-thanks';
+@import 'quiz/adaptive';

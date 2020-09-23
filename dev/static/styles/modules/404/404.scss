@@ -5,7 +5,6 @@
 	background: $white;
 	&__logo {
 		display: inline-block;
-		margin-left: 120px;
 	}
 	&__content {
 		position: absolute;
@@ -29,7 +28,7 @@
 
 @media only screen and (max-width: 1199px) {
 	.not-found {
-		padding: 38px 80px;
+		padding: 38px 40px;
 		&__img {
 			margin-bottom: 46px;
 		}
@@ -37,9 +36,27 @@
 	}
 }
 
+@media only screen and (max-width: 767px) {
+	.not-found {
+		&__content {
+			width: 100%;
+		}
+	}
+}
 
 @media only screen and (max-width: 575px) {
 	.not-found {
-		&__content {max-width: 500px}
+		padding: 30px 15px;
+		&__logo {max-width: 160px;}
+		&__content {
+			left: 15px;
+			right: 15px;
+			width: auto;
+			transform: translate(0, -50%);
+		}
+		&__link {
+			max-width: 290px;
+			margin-top: 30px;
+		}
 	}
 }
