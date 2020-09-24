@@ -88,10 +88,8 @@
 	&__text {
 		margin-bottom: 56px;
 	}
-	&__checkbox {
-		margin: 50px 0;
-	}
 	&__button {
+		margin: 50px 0 20px;
 		button {
 			height: 80px;
 			padding: 25px 20px;
@@ -136,15 +134,6 @@
 				}
 			}
 		}
-		&__checkbox {
-			.checkbox {
-				&__text {
-					&::after {
-						content: url('../../../../static/images/general/check-o.svg');
-					}
-				}
-			}
-		}
 		&__button {
 			button {
 				background: $white;
@@ -175,10 +164,8 @@
 			}
 		}
 		&__title {margin-bottom: 20px}
-		&__checkbox {
-			margin: 30px 0;
-		}
 		&__button {
+			margin: 30px 0 15px;
 			button {
 				height: 50px;
 				padding: 12px 20px;

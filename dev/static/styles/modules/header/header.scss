@@ -112,7 +112,12 @@
 		&__logo {max-width: 210px}
 		&__phone {margin-right: 44px}
 		&__navigation, &__callback {display: none}
-		&__hamburger {display: block}
+		&__hamburger {
+			display: block;
+			span {
+				background: $text-dark;
+			}
+		}
 	}
 }
 

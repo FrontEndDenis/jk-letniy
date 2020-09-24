@@ -188,7 +188,6 @@ function layoutsInfo() {
 		area: '31.5 м²',
 		livingArea: '26.6 м²',
 		roomArea: '21.1 м²',
-		kitchenArea: '0 м²',
 		wcArea: '3.8 м²',
 		ceilingHeight: '3 м',
 		img: 'static/images/content/plan-2.png',
@@ -198,7 +197,6 @@ function layoutsInfo() {
 		area: '28.4 м²',
 		livingArea: '18 м²',
 		roomArea: '18 м²',
-		kitchenArea: '0 м²',
 		wcArea: '3.8 м²',
 		ceilingHeight: '3 м',
 		img: 'static/images/content/plan-3.png',
@@ -208,7 +206,6 @@ function layoutsInfo() {
 		area: '28.4 м²',
 		livingArea: '18 м²',
 		roomArea: '18 м²',
-		kitchenArea: '0 м²',
 		wcArea: '3.8 м²',
 		ceilingHeight: '3 м',
 		img: 'static/images/content/plan-4.png',
@@ -218,7 +215,6 @@ function layoutsInfo() {
 		area: '31.5 м²',
 		livingArea: '21.1 м²',
 		roomArea: '21.1 м²',
-		kitchenArea: '0 м²',
 		wcArea: '3.8 м²',
 		ceilingHeight: '3 м',
 		img: 'static/images/content/plan-5.png',
@@ -248,7 +244,6 @@ function layoutsInfo() {
 		area: '23.9 м²',
 		livingArea: '15.2 м²',
 		roomArea: '15.2 м²',
-		kitchenArea: '0 м²',
 		wcArea: '3.6 м²',
 		ceilingHeight: '3 м',
 		img: 'static/images/content/plan-8.png',
@@ -258,7 +253,6 @@ function layoutsInfo() {
 		area: '23.9 м²',
 		livingArea: '15.2 м²',
 		roomArea: '15.2 м²',
-		kitchenArea: '0 м²',
 		wcArea: '3.6 м²',
 		ceilingHeight: '3 м',
 		img: 'static/images/content/plan-9.png',
@@ -268,7 +262,6 @@ function layoutsInfo() {
 		area: '23.9 м²',
 		livingArea: '15.2 м²',
 		roomArea: '15.2 м²',
-		kitchenArea: '0 м²',
 		wcArea: '3.6 м²',
 		ceilingHeight: '3 м',
 		img: 'static/images/content/plan-10.png',
@@ -278,7 +271,6 @@ function layoutsInfo() {
 		area: '23.9 м²',
 		livingArea: '15.2 м²',
 		roomArea: '15.2 м²',
-		kitchenArea: '0 м²',
 		wcArea: '3.6 м²',
 		ceilingHeight: '3 м',
 		img: 'static/images/content/plan-11.png',
@@ -320,7 +312,12 @@ function layoutsInfo() {
 		document.querySelector('#area').textContent = area;
 		document.querySelector('#living-area').textContent = livingArea;
 		document.querySelector('#room').innerHTML = 'Площадь комнаты:' + '<span>' + roomArea + '</span>';
-		document.querySelector('#kitchen').innerHTML = 'Площадь кухни:' + '<span>' + kitchenArea + '</span>';
+		if(kitchenArea === undefined) {
+			document.querySelector('#kitchen').style.display = 'none';
+		} else {
+			document.querySelector('#kitchen').style.display = 'block';
+			document.querySelector('#kitchen').innerHTML = 'Площадь кухни:' + '<span>' + kitchenArea + '</span>';
+		}
 		document.querySelector('#wc').innerHTML = 'Площадь санузлов:' + '<span>' + wcArea + '</span>';
 		document.querySelector('#ceiling').innerHTML = 'Высота потолков:' + '<span>' + ceilingHeight + '</span>';
 		document.querySelector('#img').setAttribute('src', img);

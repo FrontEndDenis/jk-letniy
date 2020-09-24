@@ -70,6 +70,7 @@
 	&__list {
 		li {
 			&:not(:last-child) {margin-bottom: 8px}
+			&:last-child {margin-top: 40px}
 		}
 		span {
 			margin-left: 4px;
